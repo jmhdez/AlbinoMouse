@@ -2,4 +2,34 @@
 
 
 /* Fuera iconos de los posts */
-span.format-standard:before { content: ""; }
+span.format-standard:before { 
+	content: ""; 
+}
+
+/* Cabecera más clásica */
+.site-title {
+	float: none;	
+	font-size: 3em;
+	font-weight: 800;
+	margin: 10px 10px 0 0;
+}
+
+.site-description {
+	float: none;
+	background-color: transparent;
+	float: none;
+	font-size: 1.5em;
+	font-weight: 600;
+	letter-spacing: inherit;
+	color: #5c5b5a;
+	max-width: inherit;
+	padding: 0;
+}
+
+h2.site-description {
+	margin: 0 0 40px 0;
+}
+
+.site-description:after {
+	border: none;
+}
