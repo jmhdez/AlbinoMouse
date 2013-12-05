@@ -1,0 +1,5 @@
+/* Estilo específico para blog.koalite.com */
+
+
+/* Fuera iconos de los posts */
+span.format-standard:before { content: ""; }
