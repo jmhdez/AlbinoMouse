@@ -1,0 +1,656 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: AlbinoMouse\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Hov! Siden kunne ikke findes"
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location.<br/>Maybe try one of the links below or a search?"
+msgstr "Det der ud til at der ikke findes noget her.<br/>Prøv et af linkene herunder eller foretag en søgning."
+
+#: 404.php:25
+msgid "Most Used Categories"
+msgstr "Oftest brugte kategorier"
+
+#: archive.php:20
+msgid "<h1 class=\"page-title archive-header symbol folder-icon\">Category Archives: %s"
+msgstr "<h1 class=\"page-title archive-header symbol folder-icon\">Kategori arkiver: %s"
+
+#: archive.php:23
+msgid "<h1 class=\"page-title archive-header tag-icon\">Tag Archives: %s"
+msgstr "<h1 class=\"page-title archive-header tag-icon\">Tag arkiv: %s"
+
+#: archive.php:30
+msgid "<h1 class=\"archive-header page-title symbol user-icon\">Author Archives: %s"
+msgstr "<h1 class=\"archive-header page-title symbol user-icon\">Forfatter arkiv: %s"
+
+#: archive.php:38
+msgid "<h1 class=\"page-title archive-header calendar-icon\">Daily Archives: %s"
+msgstr "<h1 class=\"page-title archive-header calendar-icon\">Dagligt arkiv: %s"
+
+#: archive.php:41
+msgid "<h1 class=\"page-title archive-header symbol calendar-icon\">Monthly Archives: %s"
+msgstr "<h1 class=\"page-title archive-header symbol calendar-icon\">Månedlig arkiv: %s"
+
+#: archive.php:44
+msgid "<h1 class=\"page-title archive-header symbol calendar-icon\">Yearly Archives: %s"
+msgstr "<h1 class=\"page-title archive-header symbol calendar-icon\">Årligt arkiv: %s"
+
+#: archive.php:47
+msgid "<h1 class=\"page-title archive-header symbol archive-icon\">Archives</h1>"
+msgstr "<h1 class=\"page-title archive-header symbol archive-icon\">Arkiver</h1>"
+
+#: comments.php:32
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "En kommentar til “%2$s”"
+msgstr[1] "%1$s kommentarer til “%2$s”"
+
+#: comments.php:39
+#: comments.php:59
+msgid "Comment navigation"
+msgstr "Kommentar navigation"
+
+#: comments.php:40
+#: comments.php:60
+msgid "<i class=\"icon-arrow-left\"></i> Older Comments"
+msgstr "<i class=\"icon-arrow-left\"></i> Ældre kommentarer"
+
+#: comments.php:41
+#: comments.php:61
+msgid "Newer Comments <i class=\"icon-arrow-right\"></i>"
+msgstr "Nyere kommentarer <i class=\"icon-arrow-right\"></i>"
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr "Der er lukket for kommentarer."
+
+#: content-page.php:26
+#: content-single.php:35
+#: content.php:55
+#: image.php:84
+msgid "Pages:"
+msgstr "Sider:"
+
+#: content-page.php:27
+#: content-single.php:36
+#: content.php:117
+msgid "<i class=\"icon-pencil\"></i> Edit"
+msgstr "<i class=\"icon-pencil\"></i> Rediger"
+
+#: content-single.php:69
+#: content.php:72
+msgid "Leave a comment"
+msgstr "Skriv en kommentar"
+
+#: content-single.php:69
+#: content.php:72
+msgid "1 Comment"
+msgstr "1 kommentar"
+
+#: content-single.php:69
+#: content.php:72
+msgid "% Comments"
+msgstr "% kommentarer"
+
+#: content-single.php:73
+#: content-single.php:82
+#: content.php:76
+#: content.php:85
+msgid ", "
+msgstr ", "
+
+#: content-single.php:47
+msgid "About %s"
+msgstr "Om %s"
+
+#: content-single.php:51
+msgid "<strong>View all posts by %s</strong> <i class=\"icon-arrow-right\"></i>"
+msgstr "<strong>Vis alle indlæg af %s</strong> <i class=\"icon-arrow-right\"></i>"
+
+#: content-single.php:25
+#: content-single.php:29
+#: content.php:12
+#: content.php:45
+#: content.php:49
+msgid "Permalink to %s"
+msgstr "Permalink til %s"
+
+#: content.php:14
+msgid "<span class=\"featured\">Featured</span>"
+msgstr "<span class=\"featured\">Fremhævet</span>"
+
+#: footer.php:40
+msgid "A Semantic Personal Publishing Platform"
+msgstr "En Semantic Personal Publishing Platform"
+
+#: footer.php:40
+msgid "Proudly powered by %s"
+msgstr "Med stolthed præsenteret af %s"
+
+#: footer.php:42
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s af %2$s."
+
+#: functions.php:55
+msgid "Primary Menu"
+msgstr "Hovedmenu"
+
+#: functions.php:123
+#: options.php:200
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: header.php:27
+msgid "Page %s"
+msgstr "Side %s"
+
+#: header.php:72
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:73
+msgid "Skip to content"
+msgstr "Videre til indhold"
+
+#: image.php:33
+#: image.php:98
+msgid "Edit"
+msgstr "Rediger"
+
+#: image.php:90
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Skriv en kommentar\">Skriv en kommentar</a> eller lav et trackback link: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL til dit indlæg\" rel=\"trackback\">Trackback URL</a>."
+
+#: image.php:92
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Der er lukket for kommentarer men du kan lave et trackback link: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL til dit indlæg\" rel=\"trackback\">Trackback URL</a>."
+
+#: image.php:94
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Der er lukket for trackback links men du kan  <a class=\"comment-link\" href=\"#respond\" title=\"Skriv en kommentar\">skrive en kommentar</a>."
+
+#: image.php:96
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Der er lukket for kommentarer og trackback links."
+
+#: inc/template-tags.php:26
+msgid "Post navigation"
+msgstr "Indlægsnavigering"
+
+#: inc/template-tags.php:36
+msgid "<i class=\"icon-arrow-left\"></i> Older posts"
+msgstr "<i class=\"icon-arrow-left\"></i> Ældre indlæg"
+
+#: inc/template-tags.php:40
+msgid "Newer posts <i class=\"icon-arrow-right\"></i>"
+msgstr "Nyere indlæg <i class=\"icon-arrow-right\"></i>"
+
+#: inc/template-tags.php:65
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:65
+#: inc/template-tags.php:88
+msgid "<i class=\"icon-pencil\"></i>Edit"
+msgstr "<i class=\"icon-pencil\"></i>Rediger"
+
+#: inc/template-tags.php:75
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"siger\">siger:</span>"
+
+#: inc/template-tags.php:78
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar venter godkendelse."
+
+#: inc/template-tags.php:86
+msgid "%1$s at %2$s"
+msgstr "%1$s kl. %2$s"
+
+#: options.php:75
+msgid "Link and Footer Color"
+msgstr "Link og Footer farve"
+
+#: inc/options-framework.php:163
+#: inc/options-framework.php:382
+msgid "Theme Options"
+msgstr "Temamuligheder"
+
+#: no-results.php:12
+msgid "Nothing Found"
+msgstr "Intet fundet"
+
+#: no-results.php:18
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Klar til at poste dit første indlæg? <a href=\"%1$s\">Start her</a>."
+
+#: no-results.php:22
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Beklager men der var intet der passede til dine søgekriterier. Prøv igen med nogle andre søgeord."
+
+#: no-results.php:27
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Det ser ud til at vi ikke kan finde det du leder efter. Måske hjælper det at søge efter det."
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Søgeresultat for: %s"
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Søg"
+
+#: image.php:37
+msgid "<i class=\"icon-arrow-left\"></i> Previous image"
+msgstr "<i class=\"icon-arrow-left\"></i> Forrige billede"
+
+#: image.php:38
+msgid "Next image <i class=\"icon-arrow-right\"></i>"
+msgstr "Næste billede <i class=\"icon-arrow-right\"></i>"
+
+#: content.php:31
+#: content.php:34
+#: content.php:53
+#: functions.php:72
+msgid "<span class=\"icon-plus-sign\"></span> Continue reading"
+msgstr "<span class=\"icon-plus-sign\"></span> Læs mere"
+
+#: functions.php:133
+msgid "Footer 1"
+msgstr "Footer 1"
+
+#: functions.php:143
+msgid "Footer 2"
+msgstr "Footer 2"
+
+#: functions.php:153
+msgid "Footer 3"
+msgstr "Footer 3"
+
+#: functions.php:163
+msgid "Footer 4"
+msgstr "Footer 4"
+
+#: image.php:23
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a> <a href=\"%3$s\" title=\"Link to full-size image\">(%4$spx &times; %5$spx)</a>"
+msgstr "Udgivet <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> in <a href=\"%6$s\" title=\"Tilbage til %7$s\" rel=\"gallery\">%7$s</a> <a href=\"%3$s\" title=\"Link til originalstørrelse af billedet\">(%4$spx &times; %5$spx)</a>"
+
+#: inc/options-framework.php:243
+msgid "Save Options"
+msgstr "Gem opsætning"
+
+#: inc/options-framework.php:244
+msgid "Restore Defaults"
+msgstr "Sæt tilbage til oprindelig opsætning"
+
+#: inc/options-framework.php:244
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Klik OK for at sætte alt tilbage til oprindelig opsætning. Enhver temaopsætning vil gå tabt!"
+
+#: inc/options-framework.php:276
+msgid "Default options restored."
+msgstr "Oprindelige opsætning aktiveret."
+
+#: inc/options-framework.php:331
+msgid "Options saved."
+msgstr "Opsætning gemt."
+
+#: inc/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr "Tema opsætning medier"
+
+#: inc/options-medialibrary-uploader.php:126
+msgid "Upload"
+msgstr "Upload"
+
+#: inc/options-medialibrary-uploader.php:149
+msgid "View File"
+msgstr "Se fil"
+
+#: inc/options-medialibrary-uploader.php:282
+msgid "Gallery"
+msgstr "Galeri"
+
+#: inc/options-medialibrary-uploader.php:282
+msgid "Previously Uploaded"
+msgstr "Tidligere uploadet"
+
+#: inc/options-sanitize.php:232
+msgid "No Repeat"
+msgstr "Ingen gentagelse"
+
+#: inc/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr "Gentag horisontalt"
+
+#: inc/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr "Gentag vertikalt"
+
+#: inc/options-sanitize.php:235
+msgid "Repeat All"
+msgstr "Gentag alt"
+
+#: inc/options-sanitize.php:248
+msgid "Top Left"
+msgstr "Venstre top"
+
+#: inc/options-sanitize.php:249
+msgid "Top Center"
+msgstr "Top center"
+
+#: inc/options-sanitize.php:250
+msgid "Top Right"
+msgstr "Højre top"
+
+#: inc/options-sanitize.php:251
+msgid "Middle Left"
+msgstr "Højre midte"
+
+#: inc/options-sanitize.php:252
+msgid "Middle Center"
+msgstr "Midt center"
+
+#: inc/options-sanitize.php:253
+msgid "Middle Right"
+msgstr "Venstre midte"
+
+#: inc/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr "Venstre bund"
+
+#: inc/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr "Bund center"
+
+#: inc/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr "Højre bund"
+
+#: inc/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr "Scroll normalt"
+
+#: inc/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr "Fiksér"
+
+#: inc/options-sanitize.php:344
+msgid "Normal"
+msgstr "Normal"
+
+#: inc/options-sanitize.php:345
+msgid "Italic"
+msgstr "Kursiv"
+
+#: inc/options-sanitize.php:346
+msgid "Bold"
+msgstr "Fed"
+
+#: inc/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr "Fed kursiv"
+
+#: options.php:23
+msgid "One"
+msgstr "En"
+
+#: options.php:24
+msgid "Two"
+msgstr "To"
+
+#: options.php:25
+msgid "Three"
+msgstr "Tre"
+
+#: options.php:26
+msgid "Four"
+msgstr "Fire"
+
+#: options.php:46
+msgid "+1 Button (Google+)"
+msgstr "+1 Button (Google+)"
+
+#: options.php:76
+msgid "Choose your own link and footer color."
+msgstr "Vælg din egen link og footer farve"
+
+#: options.php:131
+msgid "Your Logo"
+msgstr "Dit logo"
+
+#: options.php:149
+msgid "Display the description (Tagline) on your site."
+msgstr "Vis dit slogan (Tagline) på siden."
+
+#: options.php:82
+msgid "General Background"
+msgstr "Overordnet baggrund"
+
+#: options.php:83
+msgid "Change the background of your site."
+msgstr "Skift baggrunden på din side."
+
+#: options.php:89
+msgid "Title Font"
+msgstr "Titel font"
+
+#: options.php:90
+#: options.php:106
+msgid "Choose your favorite google web font."
+msgstr "Vælg din yndlings Google Web Font."
+
+#: options.php:105
+msgid "General Font"
+msgstr "Overordnet font"
+
+#: options.php:118
+msgid "Favicon"
+msgstr "Favicon"
+
+#: options.php:119
+msgid "Customize your website with your own Favicon."
+msgstr "Vælg dit eget Favicon til din side."
+
+#: options.php:181
+msgid "Social Media Buttons"
+msgstr "Social Media Buttons"
+
+#: options.php:232
+msgid "Custom Copyright Text"
+msgstr "Brugerdefineret copyright tekst"
+
+#: options.php:233
+msgid "Change the default copyright text."
+msgstr "Skift den oprindelige copyright tekst"
+
+#: options.php:148
+msgid "Description of your Site"
+msgstr "Beskriv din side"
+
+#: inc/options-framework.php:196
+msgid "Clear"
+msgstr "Slet"
+
+#: inc/options-framework.php:197
+msgid "Default"
+msgstr "Standard"
+
+#: inc/options-framework.php:198
+msgid "Select Color"
+msgstr "Vælg farve"
+
+#: options.php:45
+msgid "Tweet Button (Twitter)"
+msgstr "Tweet Button (Twitter)"
+
+#: options.php:47
+msgid "Like Button (Facebook)"
+msgstr "Like Button (Facebook)"
+
+#: options.php:132
+msgid "Upload your logo via the familiar media upload window. Press &#171;Use This Image&#187; to close the window. The Logo will now appear instead of the title of your website."
+msgstr "Upload dit logo med medieupload vinduet. Tryk &#171;Brug dette billede&#187; for at lukke vinduet. Det valgte logo vil blive vist i stedet for titlen på din side."
+
+#: sidebar.php:15
+msgid "Archives"
+msgstr "Arkiver"
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "Meta"
+
+#: options.php:138
+msgid "Header Background"
+msgstr "Header baggrund"
+
+#: options.php:139
+msgid "Your able to choose between a transparent (same color like the general background) and light gray header background. The light gray header background is slightly transparent as well."
+msgstr "Du kan vælge mellem en transparent og lysegrå header baggrund. Den lysegrå header baggrund er også lidt transparent."
+
+#: options.php:204
+msgid "Sidebar Layout"
+msgstr "Sidebar Layout"
+
+#: options.php:205
+msgid "You can disable the sidebar and use the full width for your content."
+msgstr "Du kan deaktivere sidebaren og udnytte sidens fulde bredde til dit indhold."
+
+#: options.php:220
+msgid "Footer Layout"
+msgstr "Footer Layout"
+
+#: options.php:221
+msgid "How many widgets do you have to load into the footer?"
+msgstr "Hvor mange widgets vil du have i footeren?"
+
+#: inc/options-interface.php:426
+msgid "Marginal Notes"
+msgstr "Marginal bemærkninger"
+
+#: inc/options-interface.php:428
+msgid "AlbinoMouse Support"
+msgstr "AlbinoMouse support"
+
+#: inc/options-interface.php:430
+msgid "The first place to ask questions and report bugs about AlbinoMouse is the official <a href=\"http://wordpress.org/support/theme/albinomouse/\">support forum</a>.\n"
+""
+msgstr "Det første sted at stille spørgsmål og rapportere fejl om AlbinoMouse er det officielle <a href=\"http://wordpress.org/support/theme/albinomouse/\">support forum</a>.\n"
+""
+
+#: inc/options-interface.php:432
+msgid "I try to reply to your posts as soon as possible. I am happy if you join discussions."
+msgstr "Jeg vil besvare dit indlæg så snart det er muligt. Tak fordi du valgte at deltage i debatten."
+
+#: inc/options-interface.php:435
+msgid "<a href=\"http://www.pixelstrol.ch/themes/albinomouse/\">On my website</a> I am gonna write about tips and features. Perhaps there is already an answer to your question."
+msgstr "<a href=\"http://www.pixelstrol.ch/themes/albinomouse/\">På min hjemmeside</a> skriver jeg om tips og freatures. Måske findes svaret på dit spørgsmål allerede der."
+
+#: inc/options-interface.php:437
+msgid "Your help is very welcome"
+msgstr "Din hjælp er meget velkommen"
+
+#: inc/options-interface.php:438
+msgid "There are lots of possibilities to help me improving this theme. I am happy if you are willing to help me with\n"
+"\t\t\t\t\t\t<ul><li>- new and existing translations</li><li>- report me spelling mistakes</li><li>- report me typos and other bugs</li></ul>"
+msgstr "Der er mange muligheder for at hjælpe mig med at forbedre temaet. Det vil glæde mig hvis du vil hjælpe mig med\n"
+"\t\t\t\t\t\t<ul><li>- nye og eksisterende oversættelser</li><li>- stavefejl</li><li>- rod med sproget og andre fejl</li></ul>"
+
+#: inc/options-interface.php:441
+msgid "Like it?"
+msgstr "Syntes om?"
+
+#: inc/options-interface.php:443
+msgid "In case you like and use the theme, you may donate."
+msgstr "Hvis du er glad for dette tema må du meget gerne give en donation."
+
+#: options.php:52
+msgid "Posts"
+msgstr "Indlæg"
+
+#: options.php:53
+msgid "Single Post"
+msgstr "Enkelt indlæg"
+
+#: options.php:155
+msgid "Header Search Box"
+msgstr "Top søgningsboks"
+
+#: options.php:156
+msgid "Display the search box in the header of your site."
+msgstr "Vis søgeboksen i toppen af din side"
+
+#: options.php:182
+msgid "Which social media buttons do you want to appear below posts?"
+msgstr "Hvilke sociale medieknapper skal vises under dine indlæg?"
+
+#: options.php:189
+msgid "Social Media Buttons Locations"
+msgstr "Sociale medieknappers placering"
+
+#: options.php:190
+msgid "Where do you want to see the social media buttons you checked below?"
+msgstr "Hvor skal de sociale medieknapper placeres?"
+
+#: options.php:239
+msgid "Show some Love!"
+msgstr "Vis din kærlighed!"
+
+#: options.php:240
+msgid "Display a link to WordPress and the theme author."
+msgstr "Vis et link til Wordpress og temaets forfatter"
+
+#: options.php:54
+msgid "Pages"
+msgstr "Sider"
+
+#: options.php:71
+msgid "Global"
+msgstr "Global"
+
+#: options.php:127
+msgid "Header"
+msgstr "Header (top)"
+
+#: options.php:168
+msgid "Post Thumbnails"
+msgstr "Indlægs billede"
+
+#: options.php:169
+msgid "Choose the size of your post thumbnails."
+msgstr "Vælg størrelsen af dit indlægs billede"
+
+#: options.php:216
+msgid "Footer"
+msgstr "Footer"
+
+#: options.php:164
+msgid "Content"
+msgstr "Indhold"
+
+#: options.php:174
+msgid "Thumbnail size"
+msgstr "Billedstørrelse"
+
+#: options.php:175
+msgid "Medium size"
+msgstr "Medium størrelse"
+
+#: options.php:176
+msgid "Large size"
+msgstr "Stor størrelse"
+
+#: options.php:177
+msgid "Full resolution"
+msgstr "Fuld størrelse"
+

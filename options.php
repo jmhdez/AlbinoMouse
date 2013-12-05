@@ -6,17 +6,17 @@
  */
 
 
-function albinomouseoptions_option_name() {
+function optionsframework_option_name() {
 
-	$albinomouseoptions_settings = get_option('albinomouseoptions');
+	$optionsframework_settings = get_option('optionsframework');
 	
 	// Edit 'options-theme-customizer' and set your own theme name instead
-	$albinomouseoptions_settings['id'] = 'albinomouse';
-	update_option('albinomouseoptions', $albinomouseoptions_settings);
+	$optionsframework_settings['id'] = 'albinomouse';
+	update_option('optionsframework', $optionsframework_settings);
 }
 
 
-function albinomouseoptions_options() {
+function optionsframework_options() {
 
 	// Footer widgets array
 	$footer_widgets_array = array(
@@ -24,6 +24,34 @@ function albinomouseoptions_options() {
 		'two' => __('Two', 'albinomouse'),
 		'three' => __('Three', 'albinomouse'),
 		'four' => __('Four', 'albinomouse'),
+	);	
+
+	// Social Media Buttons Defaults
+	$socialmediabuttons_defaults = array(
+		'twitter' => '0',
+		'googleplus' => '0',
+		'facebook' => '0'	
+	);
+
+	// Social Media Location Defaults
+	$socialmedialocations_defaults = array(
+		'post' => '0',
+		'single' => '0',
+		'page' => '0'		
+	);
+	
+	// Social Media Options
+	$socialmedia_options = array(
+		'twitter' => __('Tweet Button (Twitter)', 'albinomouse'),
+		'googleplus' => __('+1 Button (Google+)', 'albinomouse'),
+		'facebook' => __('Like Button (Facebook)', 'albinomouse')
+	);
+
+	// Social Media Locations
+	$socialmedia_locations = array(
+		'post' => __('Posts', 'albinomouse'),
+		'single' => __('Single Post', 'albinomouse'),
+		'page' => __('Pages', 'albinomouse')
 	);	
 
 	// Background Defaults
@@ -35,7 +63,7 @@ function albinomouseoptions_options() {
 		'attachment'=>'scroll' );
 
 	// Directory path to image radio buttons
-	$imagepath =  get_template_directory_uri() . '/inc/options/images/';
+	$imagepath =  get_template_directory_uri() . '/inc/images/';
 
 	$options = array();
 
@@ -58,73 +86,63 @@ function albinomouseoptions_options() {
 		'type' => 'background' );
 
 	$options[] = array(
-		'name' => __('Favicon', 'albinomouse'),
-		'desc' => __('Customize your website with your own Favicon.', 'albinomouse'),
-		'id' => 'favicon-upload',
-		'std' => '',
-		'type' => 'upload');
-
-	$options[] = array(
 		'name' => __('Title Font', 'albinomouse'),
 		'desc' => __('Choose your favorite google web font.', 'albinomouse'),
 		'id' => 'title_font',
 		'std' => 'Bitter',
-		'type' => 'images',
+		'type' => 'select',
 		'options' => array(
-			'Anton' => $imagepath . 'Font_Anton.png',
-			'Bitter' => $imagepath . 'Font_Bitter.png',
-			'Droid Sans' => $imagepath . 'Font_Droid_Sans.png',
-			'Droid Serif' => $imagepath . 'Font_Droid_Serif.png',
-			'Open Sans' => $imagepath . 'Font_Open_Sans.png',
-			'Source Sans Pro' => $imagepath . 'Font_Source_Sans_Pro.png',
-			'Ubuntu' => $imagepath . 'Font_Ubuntu.png',
-			'Yanone Kaffeesatz' => $imagepath . 'Font_Yanone_Kaffeesatz.png'));
+			'Anton' => 'Anton',
+			'Bitter' => 'Bitter',
+			'Droid Sans' => 'Droid Sans',
+			'Droid Serif' => 'Droid Serif',
+			'Open Sans' => 'Open Sans',
+			'Source Sans Pro' => 'Source Sans Pro',
+			'Ubuntu' => 'Ubuntu',
+			'Yanone Kaffeesatz' => 'Yanone Kaffeesatz'));
 
 	$options[] = array(
 		'name' => __('General Font', 'albinomouse'),
 		'desc' => __('Choose your favorite google web font.', 'albinomouse'),
 		'id' => 'general_font',
 		'std' => 'Open Sans',
-		'type' => 'images',
+		'type' => 'select',
 		'options' => array(
-			'Droid Sans' => $imagepath . 'Font_Droid_Sans.png',
-			'Droid Serif' => $imagepath . 'Font_Droid_Serif.png',
-			'Open Sans' => $imagepath . 'Font_Open_Sans.png',
-			'Source Sans Pro' => $imagepath . 'Font_Source_Sans_Pro.png',
-			'Ubuntu' => $imagepath . 'Font_Ubuntu.png'));
+			'Droid Sans' => 'Droid Sans',
+			'Droid Serif' => 'Droid Serif',
+			'Open Sans' => 'Open Sans',
+			'Source Sans Pro' => 'Source Sans Pro',
+			'Ubuntu' => 'Ubuntu'));
+
+	$options[] = array(
+		'name' => __('Favicon', 'albinomouse'),
+		'desc' => __('Customize your website with your own Favicon.', 'albinomouse'),
+		'id' => 'favicon-upload',
+		'std' => '',
+		'type' => 'upload');
 		
 	/*-----------------------------------------------*/		
 
 	$options[] = array(
 		'name' => __('Header', 'albinomouse'),
 		'type' => 'heading');
-
-	$options[] = array(
-		'name' => __('Header Background', 'albinomouse'),
-		'desc' => __('Set the header background.', 'albinomouse'),
-		'id' => 'header-background',
-		'std' => 'light-gray',
-		'type' => 'radio',
-		'options' => array(
-			'transparent' => __('Transparent', 'albinomouse'),
-			'light-gray' => __('Gray semi-transparent', 'albinomouse')));
 		
 	$options[] = array(
-		'name' => __('Replace the title with your logo', 'albinomouse'),
+		'name' => __('Your Logo', 'albinomouse'),
 		'desc' => __('Upload your logo via the familiar media upload window. Press &#171;Use This Image&#187; to close the window. The Logo will now appear instead of the title of your website.', 'albinomouse'),
 		'id' => 'logo-upload',
 		'std' => '',
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('Title and description alignment', 'albinomouse'),
-		'desc' => __('Set the alignment of the title/logo and your site description.', 'albinomouse'),
-		'id' => 'branding-alignment',
-		'std' => 'left',
-		'type' => 'radio',
+		'name' => __('Header Background', 'albinomouse'),
+		'desc' => __('Your able to choose between a transparent (same color like the general background) and light gray header background. The light gray header background is slightly transparent as well.', 'albinomouse'),
+		'id' => 'header-background',
+		'std' => 'light-gray',
+		'type' => 'images',
 		'options' => array(
-			'left' => __('Left', 'albinomouse'),
-			'center' => __('Center', 'albinomouse')));
+			'transparent' => $imagepath . 'transparent-header.png',
+			'light-gray' => $imagepath . 'light-gray-header.png'));
 
 	$options[] = array(
 		'name' => __('Description of your Site', 'albinomouse'),
@@ -150,24 +168,47 @@ function albinomouseoptions_options() {
 		'name' => __('Post Thumbnails', 'albinomouse'),
 		'desc' => __('Choose the size of your post thumbnails.', 'albinomouse'),
 		'id' => 'thumbnail-size',
-		'std' => 'banner',
-		'type' => 'radio',
+		'std' => 'large',
+		'type' => 'select',
 		'options' => array(
-			'thumbnail' => __('Content thumbnail (floated). See general settings.', 'albinomouse'),
-			'banner' => __('Header banner (750 x 250 pixel). Already existing images need to be regenerated.', 'albinomouse')));
+			'thumbnail' => __('Thumbnail size', 'albinomouse'),
+			'medium' => __('Medium size', 'albinomouse'),
+			'large' => __('Large size', 'albinomouse'),
+			'full' => __('Full resolution', 'albinomouse')
+		));
+	
+	$options[] = array(
+		'name' => __('Social Media Buttons', 'albinomouse'),
+		'desc' => __('Which social media buttons do you want to appear below posts?', 'albinomouse'),
+		'id' => 'social-media-buttons',
+		'std' => $socialmediabuttons_defaults,
+		'type' => 'multicheck',		
+		'options' => $socialmedia_options);
+
+	$options[] = array(
+		'name' => __('Social Media Buttons Locations', 'albinomouse'),
+		'desc' => __('Where do you want to see the social media buttons you checked below?', 'albinomouse'),
+		'id' => 'social-media-location',
+		'std' => $socialmedialocations_defaults,
+		'type' => 'multicheck',		
+		'options' => $socialmedia_locations);	
 		
+		
+	/*-----------------------------------------------*/	
+
+	$options[] = array(
+		'name' => __('Sidebar', 'albinomouse'),
+		'type' => 'heading');
+
 	$options[] = array(
 		'name' => __('Sidebar Layout', 'albinomouse'),
-		'desc' => __('Choose one of the possible layout options.', 'albinomouse'),
+		'desc' => __('You can disable the sidebar and use the full width for your content.', 'albinomouse'),
 		'id' => 'sidebar-layout',
 		'std' => '2c-r',
 		'type' => 'images',
 		'options' => array(
-			'2c-r' => $imagepath . 'sidebar-right.png',
-			'2c-rs' => $imagepath . 'sidebar-right-small.png',
-			'2c-l' => $imagepath . 'sidebar-left.png',
-			'2c-ls' => $imagepath . 'sidebar-left-small.png',
-			'1col' => $imagepath . 'no-sidebar.png'));
+			'1col' => $imagepath . 'no-sidebar.png',
+			'2c-r' => $imagepath . 'sidebar-right.png'));
 
 	/*-----------------------------------------------*/	
 
@@ -200,61 +241,6 @@ function albinomouseoptions_options() {
 		'id' => 'show-love',
 		'std' => '1',
 		'type' => 'checkbox');	
-
-	/*-----------------------------------------------*/	
-
-	$options[] = array(
-		'name' => __('Extend', 'albinomouse'),
-		'type' => 'heading');
-
-	$options[] = array(
-		'name' => __('Redesign Jetpacks social buttons (Flat Design)', 'albinomouse'),
-		'desc' => __("Replace the styles of Jetpacks social sharing buttons. <strong>Obviously the plugin Jetpack must be installed as well as the module Sharing must be activated.</strong> This option will automatically deregister the original stylesheet.", "albinomouse"),
-		'id' => 'flat-social-btn',
-		'std' => '0',
-		'type' => 'checkbox');
-		
-	$options[] = array(
-		'name' => __('Recommended Plugin: Bootstrap Shortcodes', 'albinomouse'),
-		'desc' => __('Use the power of Bootstrap 3.0 which is implemented in AlbinoMouse 2.0. With the plugin <a href="http://wordpress.org/plugins/bootstrap-shortcodes/">Bootstrap Shortcodes</a> you will be able to use the <strong>grid system, buttons, notifications, collapse and glyphicons</strong> quite easily.<br/>When you installed that plugin, go to the settings and deactivate the loading of css and js files (AlbinoMouse has already included).', 'albinomouse'),
-		'type' => 'info');
-
-	/*-----------------------------------------------*/	
-
-	$options[] = array(
-		'name' => 'Credits',
-		'type' => 'heading');
-		
-	$options[] = array(
-		'name' =>	'AlbinoMouse is built on the following frameworks:',
-		'desc' =>	'<ul>
-						<li><a href="https://github.com/twbs/bootstrap">Bootstrap 3</a> by Mark Otto and Jacob Thornton (Apache License)</li>
-						<li>The starter theme <a href="https://github.com/Automattic/_s/">underscores</a> by Automattic</li>
-						<li><a href="http://wptheming.com/options-framework-theme/">Options Framework Theme</a> by Devin Price (GPL v2)</li>
-					</ul>',
-		'type' =>	'info');
-
-	$options[] = array(
-		'name' =>	'There is even more great stuff included:',
-		'desc' =>	'<ul>
-						<li><a href="https://github.com/twittem/wp-bootstrap-navwalker">wp-bootstrap-navwalker</a> by @tittem (GPL v2)</li>
-						<li>phpColors by Arlo Carreon (MIT)</li>
-						<li><a href="https://github.com/davatron5000/FitVids.js">FitVids]</a> by Chris Coyier and Paravel (WTFPL)</li>
-						<li>Glyphicons Halflings by Jan Kovařík comes with Bootstrap 3 (same license)</li>
-						<li>Some icons from Socialicous by Shali Nguyen (MIT)</li>
-						<li>Some icons from Font Awesome by Dave Gandy (SIL OFL 1.1)</li>
-					</ul>',
-		'type' =>	'info');
-
-	$options[] = array(
-		'name' =>	'These guys make AlbinoMouse international:',
-		'desc' =>	'<ul>
-						<li>French translation by <a href="http://effingo.be/contact/">Alexis Jurdant</a></li>
-						<li>German translation by <a href="http://pixelstrol.ch/">myself, Stefan Brechbühl</a></li>
-						<li>Polish translation by <a href="http://blog.13mhz.kapa.pl/">Michał Hunger</a></li>
-						<li>Spanish translation by <a href="http://pablolaguna.es/">Pablo Laguna</a></li>
-					</ul>',
-		'type' =>	'info');
 	
 	return $options;
 }

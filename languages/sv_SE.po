@@ -1,0 +1,657 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: AlbinoMouse\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Sidan kan inte hittas."
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location.<br/>Maybe try one of the links below or a search?"
+msgstr "Det verkar som om vi inte hittar det du letar efter. Kanske en sökning eller någon av länkarna nedan kan vara till hjälp."
+
+#: 404.php:25
+msgid "Most Used Categories"
+msgstr "Mest använda kategorier"
+
+#: archive.php:20
+msgid "<h1 class=\"page-title archive-header symbol folder-icon\">Category Archives: %s"
+msgstr "<h1 class=\"page-title archive-header symbol folder-icon\">Kategoriarkiv: %s"
+
+#: archive.php:23
+msgid "<h1 class=\"page-title archive-header tag-icon\">Tag Archives: %s"
+msgstr "<h1 class=\"page-title archive-header tag-icon\">Etikettarkiv: %s"
+
+#: archive.php:30
+msgid "<h1 class=\"archive-header page-title symbol user-icon\">Author Archives: %s"
+msgstr "<h1 class=\"archive-header page-title symbol user-icon\">Författararkiv: %s"
+
+#: archive.php:38
+msgid "<h1 class=\"page-title archive-header calendar-icon\">Daily Archives: %s"
+msgstr "<h1 class=\"page-title archive-header calendar-icon\">Dagsarkiv: %s"
+
+#: archive.php:41
+msgid "<h1 class=\"page-title archive-header symbol calendar-icon\">Monthly Archives: %s"
+msgstr "<h1 class=\"page-title archive-header symbol calendar-icon\">Månadsarkiv: %s"
+
+#: archive.php:44
+msgid "<h1 class=\"page-title archive-header symbol calendar-icon\">Yearly Archives: %s"
+msgstr "<h1 class=\"page-title archive-header symbol calendar-icon\">Årsarkiv: %s"
+
+#: archive.php:47
+msgid "<h1 class=\"page-title archive-header symbol archive-icon\">Archives</h1>"
+msgstr "<h1 class=\"page-title archive-header symbol archive-icon\">Arkiv</h1>"
+
+#: comments.php:32
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "En reaktion på &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s reaktion på &ldquo;%2$s&rdquo;"
+
+#: comments.php:39
+#: comments.php:59
+msgid "Comment navigation"
+msgstr "Kommentarsnavigering"
+
+#: comments.php:40
+#: comments.php:60
+msgid "<i class=\"icon-arrow-left\"></i> Older Comments"
+msgstr "<i class=\"icon-arrow-left\"></i> Äldre kommentarer"
+
+#: comments.php:41
+#: comments.php:61
+msgid "Newer Comments <i class=\"icon-arrow-right\"></i>"
+msgstr "Nyare kommentarer <i class=\"icon-arrow-right\"></i>"
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr "Kommentarer inaktiverade."
+
+#: content-page.php:26
+#: content-single.php:35
+#: content.php:55
+#: image.php:84
+msgid "Pages:"
+msgstr "Sidor:"
+
+#: content-page.php:27
+#: content-single.php:36
+#: content.php:117
+msgid "<i class=\"icon-pencil\"></i> Edit"
+msgstr "<i class=\"icon-pencil\"></i> Redigera"
+
+#: content-single.php:69
+#: content.php:72
+msgid "Leave a comment"
+msgstr "Lämna en kommentar"
+
+#: content-single.php:69
+#: content.php:72
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: content-single.php:69
+#: content.php:72
+msgid "% Comments"
+msgstr "% Comments"
+
+#: content-single.php:73
+#: content-single.php:82
+#: content.php:76
+#: content.php:85
+msgid ", "
+msgstr ", "
+
+#: content-single.php:47
+msgid "About %s"
+msgstr "Om %s"
+
+#: content-single.php:51
+msgid "<strong>View all posts by %s</strong> <i class=\"icon-arrow-right\"></i>"
+msgstr "<strong>Visa alla inlägg av %s</strong> <i class=\"icon-arrow-right\"></i>"
+
+#: content-single.php:25
+#: content-single.php:29
+#: content.php:12
+#: content.php:45
+#: content.php:49
+msgid "Permalink to %s"
+msgstr "Permalänk till %s"
+
+#: content.php:14
+msgid "<span class=\"featured\">Featured</span>"
+msgstr "Utvalda"
+
+#: footer.php:40
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Semantisk plattform för personlig publicering"
+
+#: footer.php:40
+msgid "Proudly powered by %s"
+msgstr "Drivs med %s"
+
+#: footer.php:42
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s av %2$s."
+
+#: functions.php:55
+msgid "Primary Menu"
+msgstr "Primär meny"
+
+#: functions.php:123
+#: options.php:200
+msgid "Sidebar"
+msgstr "Sidofält"
+
+#: header.php:27
+msgid "Page %s"
+msgstr "Sida %s"
+
+#: header.php:72
+msgid "Menu"
+msgstr "Meny"
+
+#: header.php:73
+msgid "Skip to content"
+msgstr "Hoppa till innehåll"
+
+#: image.php:33
+#: image.php:98
+msgid "Edit"
+msgstr "Redigera"
+
+#: image.php:90
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Skriv en kommentar\">Skriv en kommentar</a> eller lämna en trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL för ditt inlägg\" rel=\"trackback\">Trackback URL</a>."
+
+#: image.php:92
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Kommentarer är inaktiverade men du kan lämna en trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL för ditt inlägg\" rel=\"trackback\">Trackback URL</a>."
+
+#: image.php:94
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Trackbacks är inaktiverade men du kan <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">lämna en kommentar</a>."
+
+#: image.php:96
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Kommentarer och trackbacks är inaktiverade."
+
+#: inc/template-tags.php:26
+msgid "Post navigation"
+msgstr "Inläggsnavigering"
+
+#: inc/template-tags.php:36
+msgid "<i class=\"icon-arrow-left\"></i> Older posts"
+msgstr "<i class=\"icon-arrow-left\"></i> Äldre inlägg"
+
+#: inc/template-tags.php:40
+msgid "Newer posts <i class=\"icon-arrow-right\"></i>"
+msgstr "Nyare inlägg <i class=\"icon-arrow-right\"></i>"
+
+#: inc/template-tags.php:65
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:65
+#: inc/template-tags.php:88
+msgid "<i class=\"icon-pencil\"></i>Edit"
+msgstr "<i class=\"icon-pencil\"></i>Redigera"
+
+#: inc/template-tags.php:75
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">säger:</span>"
+
+#: inc/template-tags.php:78
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar väntar på granskning."
+
+#: inc/template-tags.php:86
+msgid "%1$s at %2$s"
+msgstr "%1$s kl. %2$s"
+
+#: options.php:75
+msgid "Link and Footer Color"
+msgstr "Länk och sidfots-färg"
+
+#: inc/options-framework.php:163
+#: inc/options-framework.php:382
+msgid "Theme Options"
+msgstr "Temainställningar"
+
+#: no-results.php:12
+msgid "Nothing Found"
+msgstr "Hitta inget"
+
+#: no-results.php:18
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Reado att publicera ditt första inlägg? <a href=\"%1$s\">Starta här</a>."
+
+#: no-results.php:22
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Ledsen, men inga matchande resultat kunde hittas baserat på dina kriterier. Var vänlig försök med andra sökord."
+
+#: no-results.php:27
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Det verkar som om vi inte hittar det du letar efter. Kanske en sökning eller någon av länkarna nedan kan vara till hjälp."
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Sökresultat för: %s"
+
+#: searchform.php:10
+#: searchform.php:11
+#: searchform.php:12
+msgid "Search"
+msgstr "Sök"
+
+#: image.php:37
+msgid "<i class=\"icon-arrow-left\"></i> Previous image"
+msgstr "<i class=\"icon-arrow-left\"></i> Föregående bild"
+
+#: image.php:38
+msgid "Next image <i class=\"icon-arrow-right\"></i>"
+msgstr "Nästa bild <i class=\"icon-arrow-right\"></i>"
+
+#: content.php:31
+#: content.php:34
+#: content.php:53
+#: functions.php:72
+msgid "<span class=\"icon-plus-sign\"></span> Continue reading"
+msgstr "<span class=\"icon-plus-sign\"></span> Fortsätt läsa"
+
+#: functions.php:133
+msgid "Footer 1"
+msgstr "Sidfot 1"
+
+#: functions.php:143
+msgid "Footer 2"
+msgstr "Sidfot 2"
+
+#: functions.php:153
+msgid "Footer 3"
+msgstr "Sidfot 3"
+
+#: functions.php:163
+msgid "Footer 4"
+msgstr "Sidfot 4"
+
+#: image.php:23
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a> <a href=\"%3$s\" title=\"Link to full-size image\">(%4$spx &times; %5$spx)</a>"
+msgstr "Publicerad <span class=\"entry-date\"><time class=\"published\" title=\"%1$s\">%2$s</time></span> den <a href=\"%6$s\" title=\"Gå tillbaka till %7$s\" rel=\"gallery\">%7$s</a> <a href=\"%3$s\" title=\"Länk till orginalbild\">(%4$s &times; %5$s)</a> "
+
+#: inc/options-framework.php:243
+msgid "Save Options"
+msgstr "Spara inställningar"
+
+#: inc/options-framework.php:244
+msgid "Restore Defaults"
+msgstr "Återställ standardvärden"
+
+#: inc/options-framework.php:244
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Klicka OK för att återställa. Alla egna temainställningar kommer förloras!"
+
+#: inc/options-framework.php:276
+msgid "Default options restored."
+msgstr "Standarvärdena är återställda."
+
+#: inc/options-framework.php:331
+msgid "Options saved."
+msgstr "Inställningarna är sparade."
+
+#: inc/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr ""
+
+#: inc/options-medialibrary-uploader.php:126
+msgid "Upload"
+msgstr "Ladda upp"
+
+#: inc/options-medialibrary-uploader.php:149
+msgid "View File"
+msgstr "Visa fil"
+
+#: inc/options-medialibrary-uploader.php:282
+msgid "Gallery"
+msgstr "Galleri"
+
+#: inc/options-medialibrary-uploader.php:282
+msgid "Previously Uploaded"
+msgstr "Tidigare uppladdat"
+
+#: inc/options-sanitize.php:232
+msgid "No Repeat"
+msgstr "Ingen repetition"
+
+#: inc/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr "Repetera horisontalt"
+
+#: inc/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr "Repetera vertikalt"
+
+#: inc/options-sanitize.php:235
+msgid "Repeat All"
+msgstr "Repetera alla"
+
+#: inc/options-sanitize.php:248
+msgid "Top Left"
+msgstr "Topp Vänster"
+
+#: inc/options-sanitize.php:249
+msgid "Top Center"
+msgstr "Topp Mitten"
+
+#: inc/options-sanitize.php:250
+msgid "Top Right"
+msgstr "Topp Höger"
+
+#: inc/options-sanitize.php:251
+msgid "Middle Left"
+msgstr "Mitten Vänster"
+
+#: inc/options-sanitize.php:252
+msgid "Middle Center"
+msgstr "Mitten Mitten"
+
+#: inc/options-sanitize.php:253
+msgid "Middle Right"
+msgstr "Mitten Höger"
+
+#: inc/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr "Botten Vänster"
+
+#: inc/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr "Botten Mitten"
+
+#: inc/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr "Botten Höger"
+
+#: inc/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr "Rulla normalt"
+
+#: inc/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr "Fixerad på plats"
+
+#: inc/options-sanitize.php:344
+msgid "Normal"
+msgstr "Normal"
+
+#: inc/options-sanitize.php:345
+msgid "Italic"
+msgstr "Kursiv"
+
+#: inc/options-sanitize.php:346
+msgid "Bold"
+msgstr "Fet"
+
+#: inc/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr "Fet & kursiv"
+
+#: options.php:23
+msgid "One"
+msgstr "Ett"
+
+#: options.php:24
+msgid "Two"
+msgstr "Två"
+
+#: options.php:25
+msgid "Three"
+msgstr "Tre"
+
+#: options.php:26
+msgid "Four"
+msgstr "Fyra"
+
+#: options.php:46
+msgid "+1 Button (Google+)"
+msgstr "+1 knapp (Google+)"
+
+#: options.php:76
+msgid "Choose your own link and footer color."
+msgstr "Välj din egen länk och sidfots-färg."
+
+#: options.php:131
+msgid "Your Logo"
+msgstr "Logotyp"
+
+#: options.php:149
+msgid "Display the description (Tagline) on your site."
+msgstr "Visa hemsidans slogan."
+
+#: options.php:82
+msgid "General Background"
+msgstr "Bakgrund för hemsidan"
+
+#: options.php:83
+msgid "Change the background of your site."
+msgstr "Ändra bakgrunden för hemsidan."
+
+#: options.php:89
+msgid "Title Font"
+msgstr "Titlar"
+
+#: options.php:90
+#: options.php:106
+msgid "Choose your favorite google web font."
+msgstr "Välj din favorit från Googles webb typsnitt."
+
+#: options.php:105
+msgid "General Font"
+msgstr "Generellt"
+
+#: options.php:118
+msgid "Favicon"
+msgstr "Favicon"
+
+#: options.php:119
+msgid "Customize your website with your own Favicon."
+msgstr "Välj din egen favoritikon till hemsidan."
+
+#: options.php:181
+msgid "Social Media Buttons"
+msgstr "Knappar för social media"
+
+#: options.php:232
+msgid "Custom Copyright Text"
+msgstr "Egen text om upphovsrätt"
+
+#: options.php:233
+msgid "Change the default copyright text."
+msgstr "Ändra standardtexten för upphovsrätt."
+
+#: options.php:148
+msgid "Description of your Site"
+msgstr "Slogan"
+
+#: inc/options-framework.php:196
+msgid "Clear"
+msgstr "Rensa"
+
+#: inc/options-framework.php:197
+msgid "Default"
+msgstr "Standard"
+
+#: inc/options-framework.php:198
+msgid "Select Color"
+msgstr "Välj färg"
+
+#: options.php:45
+msgid "Tweet Button (Twitter)"
+msgstr "Tweet knapp (Twitter)"
+
+#: options.php:47
+msgid "Like Button (Facebook)"
+msgstr "Gilla knapp (Facebook)"
+
+#: options.php:132
+msgid "Upload your logo via the familiar media upload window. Press &#171;Use This Image&#187; to close the window. The Logo will now appear instead of the title of your website."
+msgstr "Ladda upp din egen logotyp via mediabiblioteket. Tryck &#171;Use This Image&#187; för att gå vidare. Logotypen kommer nu visas istället för hemsidans titel."
+
+#: sidebar.php:15
+msgid "Archives"
+msgstr "Arkiv"
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "Meta"
+
+#: options.php:138
+msgid "Header Background"
+msgstr "Bakgrund för sidhuvud"
+
+#: options.php:139
+msgid "Your able to choose between a transparent (same color like the general background) and light gray header background. The light gray header background is slightly transparent as well."
+msgstr "Du kan välja mellan transparent (samma färg som hemsidans bakgrund) och ljusgrå (delvis transparent)."
+
+#: options.php:204
+msgid "Sidebar Layout"
+msgstr "Layout för sidospalt"
+
+#: options.php:205
+msgid "You can disable the sidebar and use the full width for your content."
+msgstr "Du kan inaktivera sidospalten för att utnyttja sidans fulla brädd."
+
+#: options.php:220
+msgid "Footer Layout"
+msgstr "Layout för sidfot"
+
+#: options.php:221
+msgid "How many widgets do you have to load into the footer?"
+msgstr "Välj hur många widgetfält du viil ha i sidfoten."
+
+#: inc/options-interface.php:426
+msgid "Marginal Notes"
+msgstr "Noteringar"
+
+#: inc/options-interface.php:428
+msgid "AlbinoMouse Support"
+msgstr "AlbinoMouse support"
+
+#: inc/options-interface.php:430
+msgid "The first place to ask questions and report bugs about AlbinoMouse is the official <a href=\"http://wordpress.org/support/theme/albinomouse/\">support forum</a>.\n"
+""
+msgstr "Har du frågor eller vill rapportera en bugg för AlbinoMouse kan du göra det på WordPress <a href=\"http://wordpress.org/support/theme/albinomouse/\">support forum</a>.\n"
+""
+
+#: inc/options-interface.php:432
+msgid "I try to reply to your posts as soon as possible. I am happy if you join discussions."
+msgstr "Jag kommer försöka svara så fort som möjligt. Välkommen till diskussionen!"
+
+#: inc/options-interface.php:435
+msgid "<a href=\"http://www.pixelstrol.ch/themes/albinomouse/\">On my website</a> I am gonna write about tips and features. Perhaps there is already an answer to your question."
+msgstr "<a href=\"http://www.pixelstrol.ch/themes/albinomouse/\">På min hemsida</a> kommer jag att skriva nyheter och tips om temat. Kanske att din fråga redan finns besvarad där."
+
+#: inc/options-interface.php:437
+msgid "Your help is very welcome"
+msgstr "Din hjälp är välkommen"
+
+#: inc/options-interface.php:438
+msgid "There are lots of possibilities to help me improving this theme. I am happy if you are willing to help me with\n"
+"\t\t\t\t\t\t<ul><li>- new and existing translations</li><li>- report me spelling mistakes</li><li>- report me typos and other bugs</li></ul>"
+msgstr "Det finns alltid utrymme för förbättring. Jag skulle blig glad om du vill hjälpa mig med\n"
+"<ul><li>- översättningar</li><li>- felstavningar och skrivfel</li><li>- buggar</li></ul>\n"
+"Svensk översättning av bof (mail@bof.pm)"
+
+#: inc/options-interface.php:441
+msgid "Like it?"
+msgstr "Gillar du det?"
+
+#: inc/options-interface.php:443
+msgid "In case you like and use the theme, you may donate."
+msgstr "Om du gillar temat får du gärna donera."
+
+#: options.php:52
+msgid "Posts"
+msgstr "Posts"
+
+#: options.php:53
+msgid "Single Post"
+msgstr "Single Post"
+
+#: options.php:155
+msgid "Header Search Box"
+msgstr ""
+
+#: options.php:156
+msgid "Display the search box in the header of your site."
+msgstr ""
+
+#: options.php:182
+msgid "Which social media buttons do you want to appear below posts?"
+msgstr ""
+
+#: options.php:189
+msgid "Social Media Buttons Locations"
+msgstr "Einsatz der Social Media Buttons"
+
+#: options.php:190
+msgid "Where do you want to see the social media buttons you checked below?"
+msgstr "Wo möchtest du die oben ausgewählten Social Media Buttons anzeigen?"
+
+#: options.php:239
+msgid "Show some Love!"
+msgstr "Show some Love!"
+
+#: options.php:240
+msgid "Display a link to WordPress and the theme author."
+msgstr "Visa länkar till WordPress och temats skapare."
+
+#: options.php:54
+msgid "Pages"
+msgstr "Seiten"
+
+#: options.php:71
+msgid "Global"
+msgstr ""
+
+#: options.php:127
+msgid "Header"
+msgstr ""
+
+#: options.php:168
+msgid "Post Thumbnails"
+msgstr ""
+
+#: options.php:169
+msgid "Choose the size of your post thumbnails."
+msgstr ""
+
+#: options.php:216
+msgid "Footer"
+msgstr ""
+
+#: options.php:164
+msgid "Content"
+msgstr ""
+
+#: options.php:174
+msgid "Thumbnail size"
+msgstr ""
+
+#: options.php:175
+msgid "Medium size"
+msgstr ""
+
+#: options.php:176
+msgid "Large size"
+msgstr ""
+
+#: options.php:177
+msgid "Full resolution"
+msgstr ""
+

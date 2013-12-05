@@ -1,35 +1,38 @@
 <?php
 /**
  * The template for displaying 404 pages (Not Found).
+ *
  * @package AlbinoMouse
+ * @since AlbinoMouse 1.0
  */
- 
-$options = get_option( 'albinomouse' );
+?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
-	<div id="primary" class="content-area col-md-12">
-	
-		<main id="main" class="site-main" role="main">
+<div id="content" class="site-error" role="main">
 
-			<section class="error-404 not-found">
-				<div class="jumbotron">
-					<header class="entry-header">
-						<h1 class="entry-title">
-							<strong><?php _e( 'Oops, error 404!', 'albinomouse' ); ?></strong><br/>
-							<small><?php _e( 'That page cannot be found.', 'albinomouse' ); ?></small>
-						</h1>
-					</header><!-- .entry-header -->
+	<article id="post-0" class="post error404 not-found">
+		<header class="entry-header">
+			<h1 class="entry-title"><i class="icon-exclamation-sign"></i> <?php _e( 'Oops! That page can&rsquo;t be found.', 'albinomouse' ); ?></h1>
+		</header>
+
+		<div class="entry-content">
+			<h6><?php _e( 'It looks like nothing was found at this location.<br/>Maybe try one of the links below or a search?', 'albinomouse' ); ?></h6>
 			
-					<div class="entry-content clearfix">
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'albinomouse' ); ?></p>
-						<p><?php get_search_form(); ?></p>
-						
-					</div><!-- .entry-content -->
-				</div><!-- .jumbotron --> 				
-			</section><!-- .error-404 -->
+			<?php the_widget( 'WP_Widget_Recent_Posts', '', array( 'before_widget' => '<div class="widget widget_recent_entries one_third_col">', 'after_widget' => "</div>", 'before_title' => '<h4 class="widget-title">', 'after_title' => '</h4>' ) ); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			<div class="widget widget_categories one_third_col">
+				<h4 class="widgettitle"><?php _e( 'Most Used Categories', 'albinomouse' ); ?></h4>
+				<ul>
+				<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
+				</ul>
+			</div>
+
+			<?php the_widget( 'WP_Widget_Tag_Cloud', '', array( 'before_widget' => '<div class="widget widget_tag_cloud one_third_col last_col">', 'after_widget' => "</div>", 'before_title' => '<h4 class="widget-title">', 'after_title' => '</h4>' ) ); ?>
+
+		</div><!-- .entry-content -->
+	</article><!-- #post-0 -->
+
+</div><!-- #content -->
 
 <?php get_footer(); ?>

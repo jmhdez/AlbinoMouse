@@ -1,34 +1,24 @@
 <?php
 /**
- * Template Name: Full Width
+ * Template Name: Page Full Width
+ * Description: A full width template without the sidebar.
+ *
  * @package AlbinoMouse
+ * @since AlbinoMouse 1.0
  */
-
-$options = get_option( 'albinomouse' );
 
 get_header(); ?>
 
-	<div id="primary" class="content-area col-md-12">
+<div id="content" class="site-page-full-width" role="main">
 
-		<main id="main" class="site-main" role="main">
-		
-			<div id="breadcrumbs">
-				<?php echo albinomouse_breadcrumb(); ?>
-			</div>
-			
-			<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+		<?php get_template_part( 'content', 'page' ); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template();
-				?>
+		<?php comments_template( '', true ); ?>
 
-			<?php endwhile; // end of the loop. ?>
+	<?php endwhile; // end of the loop. ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+</div><!-- #content .site-page-full-width -->
 
 <?php get_footer(); ?>

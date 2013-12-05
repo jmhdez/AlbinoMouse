@@ -3,38 +3,30 @@
  * The Sidebar containing the main widget areas.
  *
  * @package AlbinoMouse
+ * @since AlbinoMouse 1.0
  */
 ?>
-<?php $options = get_option( 'albinomouse' ); ?>
 
-<?php if(!isset($options['sidebar-layout']) or $options['sidebar-layout'] == '2c-r') : ?>
-	<div id="secondary" class="widget-area hidden-print col-md-4 col-md-offset-1" role="complementary">
-<?php elseif($options['sidebar-layout'] == '2c-rs') : ?>
-	<div id="secondary" class="widget-area hidden-print col-md-3 col-md-offset-1" role="complementary">
-<?php elseif($options['sidebar-layout'] == '2c-l') : ?>
-	<div id="secondary" class="widget-area hidden-print col-md-4 pull-left" role="complementary">
-<?php elseif($options['sidebar-layout'] == '2c-ls') : ?>
-	<div id="secondary" class="widget-area hidden-print col-md-3 pull-left" role="complementary">
-<?php endif; ?>
+		<div id="sidebar" class="widget-area" role="complementary">
+			<?php do_action( 'before_sidebar' ); ?>
+			<?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
+				
+				<aside id="archives" class="widget widget_archive">
+					<h4 class="widget-title"><?php _e( 'Archives', 'albinomouse' ); ?></h4>
+					<ul>
+						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+					</ul>
+				</aside>
 
-		<?php do_action( 'before_sidebar' ); ?>
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-
-			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'albinomouse' ); ?></h1>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
-
-			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'albinomouse' ); ?></h1>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
-
+				<aside id="meta" class="widget widget_meta">
+					<h4 class="widget-title"><?php _e( 'Meta', 'albinomouse' ); ?></h4>
+					<ul>
+						<?php wp_register(); ?>
+						<li><?php wp_loginout(); ?></li>
+						<?php wp_meta(); ?>
+					</ul>
+				</aside>
+		
 		<?php endif; // end sidebar widget area ?>
-	</div><!-- #secondary -->
+
+		</div><!-- end #sidebar .widget-area -->

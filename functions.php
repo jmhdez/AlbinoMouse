@@ -1,89 +1,141 @@
 <?php
 /**
  * AlbinoMouse functions and definitions
+ *
  * @package AlbinoMouse
+ * @since AlbinoMouse 1.0
  */
 
 /**
  * Set the content width based on the theme's design and stylesheet.
+ *
+ * @since AlbinoMouse 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 750; /* pixels */
+	$content_width = 600; /* pixels */
 
-if ( ! function_exists( 'albinomouse_setup' ) ) :
+if ( ! function_exists( 'albinomouse_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which runs
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
+ *
+ * @since AlbinoMouse 1.0
  */
 function albinomouse_setup() {
 
-	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on AlbinoMouse, use a find and replace
-	 * to change 'albinomouse' to the name of your theme in all the template files
-	 */
+	// Custom template tags for this theme.
+	require( get_template_directory() . '/inc/template-tags.php' );
+
+	// Custom Theme Options
+	if ( !function_exists( 'optionsframework_init' ) ) {
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+		require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+	}
+	
+	// Shortcodes for this theme
+	require( get_template_directory() . '/inc/shortcodes.php' );
+
+	// Show the theme styles in the visual editor with editor-style.css.
+	add_editor_style('style-editor.css');
+	
+	// Make theme available for translation
 	load_theme_textdomain( 'albinomouse', get_template_directory() . '/languages' );
 
-	/**
-	 * Add default posts and comments RSS feed links to head
-	 */
+	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Enable support for Post Thumbnails on posts and pages
-	 */
-	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'post-thumbnail-banner', 750, 300, true );
+	// Enable support for Post Thumbnails
+	add_theme_support( 'post-thumbnails' );	
 
-	/**
-	 * Custom Theme Options
-	 */
-	if ( !function_exists( 'optionsframework_init' ) ) {
-		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/options/' );
-		require_once dirname( __FILE__ ) . '/inc/options/options-framework.php';
-	}
-
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
+	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'albinomouse' ),
 	) );
 
-	/**
-	 * Enable support for Post Formats
-	 */
-	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' ) );
-
+	// Add support for the Aside Post Formats
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'link', 'quote', 'video' ) );
 }
 endif; // albinomouse_setup
 add_action( 'after_setup_theme', 'albinomouse_setup' );
 
 /**
+ * Replace excerpt ellipsis with permalink 
+ * @since AlbinoMouse 1.2
+ */
+remove_filter('the_excerpt', 'wptexturize');
+
+function new_excerpt_more($more) {
+	global $post;
+    return '<p><a href="'. get_permalink($post->ID) . '" class="more-link">' . __( '<span class="icon-plus-sign"></span> Continue reading', 'albinomouse' ) . '</a></p>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
+ * walker_nav_menu to add icon before menu link
+ * Write the name of icon as link description e.g. icon-home 
+ * @since AlbinoMouse 1.1.2
+ */
+class albinomouse_walker_nav_menu extends Walker_Nav_Menu {
+function start_el(&$output, $item, $depth=0, $args=array(), $current_object_id=0 )
+{
+   global $wp_query;
+   $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+   $class_names = $value = '';
+
+   $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+   $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+   $class_names = ' class="'. esc_attr( $class_names ) . '"';
+
+   $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+   $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+   $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+   $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+   $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+   $description  = ! empty( $item->description ) ? esc_attr( $item->description ) : '';
+
+   $item_output = $args->before;
+   $item_output .= '<a'. $attributes .'>';
+   $item_output .= $args->link_before .'<i class="'.$description.'"></i>';
+   $item_output .= apply_filters( 'the_title', $item->title, $item->ID );
+   $item_output .= $args->link_after;
+   $item_output .= '</a>';
+   $item_output .= $args->after;
+
+   $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+   }
+}
+ 
+/**
  * Register widgetized area and update sidebar with default widgets
+ * @since AlbinoMouse 1.0
  */
 function albinomouse_widgets_init() {
 	$options = get_option( 'albinomouse' );
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'albinomouse' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	if ($options['sidebar-layout'] != '1col') {
+		register_sidebar( array(
+			'name' => __( 'Sidebar', 'albinomouse' ),
+			'id' => 'sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		) );
+	}
 	if ($options['footer-layout']) {
 		register_sidebar( array(
 			'name' => __( 'Footer 1', 'albinomouse' ),
 			'id' => 'footer-1',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		) );
 	}	
 	if ($options['footer-layout'] == '2col' || $options['footer-layout'] == '3col' || $options['footer-layout'] == '4col') {
@@ -92,8 +144,8 @@ function albinomouse_widgets_init() {
 			'id' => 'footer-2',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		) );
 	}
 	if ($options['footer-layout'] == '3col' || $options['footer-layout'] == '4col') {
@@ -102,8 +154,8 @@ function albinomouse_widgets_init() {
 			'id' => 'footer-3',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		) );
 	}
 	if ($options['footer-layout'] == '4col') {
@@ -112,60 +164,48 @@ function albinomouse_widgets_init() {
 			'id' => 'footer-4',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		) );
-	}
+	}	
 }
 add_action( 'widgets_init', 'albinomouse_widgets_init' );
 
 /**
  * Enqueue scripts and styles
+ * @since AlbinoMouse 1.0
  */
-function albinomouse_scripts() {
-	
-	wp_enqueue_style( 'albinomouse-style', get_stylesheet_uri() );
-	
-	wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/scripts.js', array('jquery'), '', true );
+function albinomouse_s() {
+
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
+
+	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'albinomouse_scripts' );
+add_action( 'wp_enqueue_scripts', 'albinomouse_s' );
 
 /**
- * Overwrite Jetpacks social sharing buttons
+ * Register and Enqueue Socialite
+ * @since AlbinoMouse 1.0
  */
-
-$options = get_option( 'albinomouse' );
-if(!isset($options['flat-social-btn']) or $options['flat-social-btn'] == '1') {
-	function overwrite_jetpack_social_buttons(){ 
-			wp_deregister_style('sharedaddy');
-			wp_enqueue_style( 'flat-social-buttons', get_template_directory_uri() . '/inc/flat-social-buttons/flat-social-buttons.css' );
-	}
-	add_action('wp_print_styles', 'overwrite_jetpack_social_buttons');	
+function albinomouse_load_socialite() {
+    // Register Socialite
+    wp_register_script( 'socialite', get_template_directory_uri() . '/js/socialite.min.js', array(), '', true );
+    // Register social initialiser script
+    wp_register_script( 'social', get_template_directory_uri() . '/js/social.js', array('jquery', 'socialite'), '', true );
+    // Now enqueue Socialite
+    wp_enqueue_script( 'social' );
 }
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Register Custom Navigation Walker
- */
-require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
-
+add_action( 'wp_enqueue_scripts', 'albinomouse_load_socialite' );
 
 /**
  * Enqueue stylesheet for Google web fonts
  * This function is attached to the wp_head action hook.
+ * @since AlbinoMouse 1.0
  */
 function albinomouse_google_web_fonts() {
 	$options = get_option( 'albinomouse' );
@@ -201,147 +241,40 @@ add_action( 'wp_enqueue_scripts', 'albinomouse_google_web_fonts' );
 /**
  * Add a style block with some configurations of the theme options.
  * This function is attached to the wp_head action hook.
+ * @since AlbinoMouse 1.0
  */
- 
-include("inc/color.php"); // Include phpColors by Primoz MIT-License
-use phpColors\Color;
-
 function albinomouse_add_custom_styles() {
 	$options = get_option( 'albinomouse' );
 	$link_color = $options['link_footer_color'];
 	$header_bg = $options['header-background'];
 	$footer_cols = $options['footer-layout'];
-	$primary = new Color($link_color); ?>
+	?>
 	
 	<style type="text/css">
-
-	#colophon,
-	.dropdown-menu > .active > a,
-	.dropdown-menu > .active > a:hover,
-	.dropdown-menu > .active > a:focus,
-	.nav-pills > li.active > a,
-	.nav-pills > li.active > a:hover,
-	.nav-pills > li.active > a:focus,
-	.navbar-default .navbar-nav > .active > a,
-	.navbar-default .navbar-nav > .active > a:hover,
-	.navbar-default .navbar-nav > .active > a:focus,
-	.navbar-default .navbar-toggle .icon-bar,
-	.navbar-default .navbar-nav > .open > a,
-	.navbar-default .navbar-nav > .open > a:hover,
-	.navbar-default .navbar-nav > .open > a:focus,
-	.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
-	.label-primary,
-	.progress-bar {
-		background-color: <?php echo $link_color ?>;
-	}
-		
-	.list-group-item.active,
-	.list-group-item.active:hover,
-	.list-group-item.active:focus,
-	.panel-primary > .panel-heading {
-		background-color: <?php echo $link_color ?>;
-		border-color: <?php echo $link_color ?>;		
-	}
-		
-	.pagination > .active > a,
-	.pagination > .active > span,
-	.pagination > .active > a:hover,
-	.pagination > .active > span:hover,
-	.pagination > .active > a:focus,
-	.pagination > .active > span:focus {
-		background-color: <?php echo $link_color ?>;
-		color: <?php echo $link_color ?>;
-	}
-
-	.nav .open > a,
-	.nav .open > a:hover,
-	.nav .open > a:focus,
-	.navbar-default .navbar-toggle,
-	a.thumbnail:hover,
-	a.thumbnail:focus,
-	.panel-primary,
-	.format-link .entry-content p:first-child {
-		border-color: <?php echo $link_color ?>;
-	}
-
-	.panel-primary > .panel-heading + .panel-collapse .panel-body {
-		border-top-color: <?php echo $link_color ?>;
-	}
-	
-	.panel-primary > .panel-footer + .panel-collapse .panel-body {
-		border-bottom-color: <?php echo $link_color ?>;
-	}
-	
-	.nav .caret {
-		border-top-color: <?php echo $link_color ?>;
-		border-bottom-color: <?php echo $link_color ?>;
-	}
-			
+	/*--- Link and Footer Color ---*/
 	a,
-	.text-primary,
-	.btn-link,
-	.navbar-default .navbar-brand,
-	a.list-group-item.active > .badge,
-	.nav-pills > .active > a > .badge {
+	a:visited,
+	.post-format-icon a:link,
+	#footer h4,
+	#footer h4 a,
+	.main-small-navigation li:before {
 		color: <?php echo $link_color ?>;
-	}	
-	
-	.btn-primary,
-	.btn-primary.disabled,
-	.btn-primary[disabled],
-	fieldset[disabled] .btn-primary,
-	.btn-primary.disabled:hover,
-	.btn-primary[disabled]:hover,
-	fieldset[disabled] .btn-primary:hover,
-	.btn-primary.disabled:focus,
-	.btn-primary[disabled]:focus,
-	fieldset[disabled] .btn-primary:focus,
-	.btn-primary.disabled:active,
-	.btn-primary[disabled]:active,
-	fieldset[disabled] .btn-primary:active,
-	.btn-primary.disabled.active,
-	.btn-primary[disabled].active,
-	fieldset[disabled] .btn-primary.active {
+	}
+	button,
+	html input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	.main-navigation li,
+	.main-navigation ul ul li,
+	h1.menu-toggle,
+	.nav-previous,
+	.nav-next,
+	.link-button,
+	.more-link,
+	#footer,
+	.comments-area .reply,
+	p.biglink {
 		background-color: <?php echo $link_color ?>;
-		border-color: #<?php echo $primary->darken(5)?>;
-	}
-			
-	a:hover,
-	a:focus,
-	.btn-link:hover,
-	.btn-link:focus,
-	.nav .open > a .caret,
-	.nav .open > a:hover .caret,
-	.nav .open > a:focus .caret {
-		color: #<?php echo $primary->darken(15)?>;
-	}
-	
-	.text-primary:hover,
-	.navbar-default .navbar-brand:hover,
-	.navbar-default .navbar-brand:focus {
-		color: #<?php echo $primary->darken(10)?>;
-	}
-	
-	.label-primary[href]:hover,
-	.label-primary[href]:focus {
-		background-color: #<?php echo $primary->darken(10)?>;
-	}
-	
-	.btn-primary:hover,
-	.btn-primary:focus,
-	.btn-primary:active,
-	.btn-primary.active,
-	.open .dropdown-toggle.btn-primary {
-		background-color: #<?php echo $primary->darken(8)?>;
-		border-color: #<?php echo $primary->darken(12)?>;
-	}
-		
-	.list-group-item.active .list-group-item-text,
-	.list-group-item.active:hover .list-group-item-text,
-	.list-group-item.active:focus .list-group-item-text {
-		color: #<?php echo $primary->lighten(40)?>;
 	}
 	
 	/*--- General Background ---*/
@@ -361,43 +294,51 @@ function albinomouse_add_custom_styles() {
 		
 	/*--- Typography ---*/
 	<?php if ($options['title_font'] == 'Anton') { ?>
-	h1, h2, h3, h4, h5, h6 { font-family: 'Anton', sans-serif; } <?php
+	h1, h2, h3, h4, h5, h6 { font-family: 'Anton', sans-serif; } 
+	h1.entry-title {line-height: 1.1;} <?php
 	}
 	if ($options['title_font'] == 'Bitter') { ?>
-	h1, h2, h3, h4, h5, h6 { font-family: 'Bitter', sans-serif; } <?php
+	h1, h2, h3, h4, h5, h6 { font-family: 'Bitter', sans-serif; }
+	h1.entry-title {line-height: 1.2;} <?php
 	}
 	if ($options['title_font'] == 'Droid Sans') { ?>
-	h1, h2, h3, h4, h5, h6 { font-family: 'Droid Sans', sans-serif; } <?php
+	h1, h2, h3, h4, h5, h6 { font-family: 'Droid Sans', sans-serif; }
+	h1.entry-title {line-height: 1.15;} <?php
 	}
 	if ($options['general_font'] == 'Droid Sans') { ?>
 	body, button, input, select, textarea {	font-family: 'Droid Sans', sans-serif; } <?php
 	}
 	if ($options['title_font'] == 'Droid Serif') { ?>
-	h1, h2, h3, h4, h5, h6 { font-family: 'Droid Serif', sans-serif; } <?php
+	h1, h2, h3, h4, h5, h6 { font-family: 'Droid Serif', sans-serif; }
+	h1.entry-title {line-height: 1.15;} <?php
 	}
 	if ($options['general_font'] == 'Droid Serif') { ?>
 	body, button, input, select, textarea {	font-family: 'Droid Serif', sans-serif; } <?php
 	}
 	if ($options['title_font'] == 'Open Sans') { ?>
-	h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', sans-serif; } <?php
+	h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', sans-serif; line-height: 1.15; }
+	h1.entry-title {line-height: 1.1;} <?php
 	}
 	if ($options['general_font'] == 'Open Sans') { ?>
 	body, button, input, select, textarea {	font-family: 'Open Sans', sans-serif; } <?php
 	}
 	if ($options['title_font'] == 'Source Sans Pro') { ?>
-	h1, h2, h3, h4, h5, h6 { font-family: 'Source Sans Pro', sans-serif; } <?php
+	h1, h2, h3, h4, h5, h6 { font-family: 'Source Sans Pro', sans-serif; }
+	h1.entry-title {line-height: 1.1;} <?php
 	}
 	if ($options['general_font'] == 'Source Sans Pro') { ?>
 	body, button, input, select, textarea {	font-family: 'Source Sans Pro', sans-serif; } <?php
 	}
 	if ($options['title_font'] == 'Ubuntu') { ?>
-	h1, h2, h3, h4, h5, h6 { font-family: 'Ubuntu', sans-serif; <?php
+	h1, h2, h3, h4, h5, h6 { font-family: 'Ubuntu', sans-serif; line-height: 1.15; }
+	h1.entry-title {line-height: 1.1;} <?php
 	}
 	if ($options['general_font'] == 'Ubuntu') { ?>
 	body, button, input, select, textarea {	font-family: 'Ubuntu', sans-serif; } <?php
 	}
 	if ($options['title_font'] == 'Yanone Kaffeesatz') { ?>
-	h1, h2, h3, h4, h5, h6 { font-family: 'Yanone Kaffeesatz', sans-serif; } <?php
+	h1, h2, h3, h4, h5, h6 { font-family: 'Yanone Kaffeesatz', sans-serif; line-height: 1.1; }
+	h1.entry-title {line-height: 1.1;} <?php
 	} ?>
 	
 	</style>
@@ -405,10 +346,34 @@ function albinomouse_add_custom_styles() {
 }
 add_action( 'wp_head', 'albinomouse_add_custom_styles' );
 
+/**
+ * Add a layout class to the array of body classes.
+ * This function is attached to the wp_head filter hook.
+ * @since AlbinoMouse 1.0
+ */
+
+function albinomouse_body_class_sidebar( $existing_classes ) {
+	$options = get_option( 'albinomouse' );
+	$sidebar = $options['sidebar-layout'];
+	
+	if ($sidebar == '1col') { 
+	$body_class = array( 'sidebar-off' );
+	}
+	else {
+	$body_class = array( 'sidebar-right' );
+	}
+		
+	$body_class = apply_filters( 'albinomouse_layout_classes', $body_class, $sidebar );
+
+	return array_merge( $existing_classes, $body_class );
+}
+add_filter( 'body_class', 'albinomouse_body_class_sidebar' );
+
 
 /**
  * Add a layout class to the array of body classes.
  * This function is attached to the wp_head filter hook.
+ * @since AlbinoMouse 1.0
  */
 
 function albinomouse_body_class_footer( $existing_classes ) {
@@ -434,38 +399,4 @@ function albinomouse_body_class_footer( $existing_classes ) {
 }
 add_filter( 'body_class', 'albinomouse_body_class_footer' );
 
-
-/** 
- * Customize read more link
- */
-function excerpt_readmore($more) {
-	global $post;
-        return '... <p><a class="more-link" href="'. get_permalink($post->ID) . '"><span class="glyphicon glyphicon-arrow-right"></span>&nbsp;' . __( "Continue reading", "albinomouse" ) . '</a></p>';
-}
-add_filter('excerpt_more', 'excerpt_readmore');
-
-
-/**
- * Display a notice that can be dismissed 
- */
-add_action('admin_notices', 'albinomouse_200_admin_notice');
-function albinomouse_200_admin_notice() {
-	global $current_user ;
-        $user_id = $current_user->ID;
-        /* Check that the user hasn't already clicked to ignore the message */
-	if ( ! get_user_meta($user_id, 'albinomouse_200_ignore_notice') ) {
-        echo '<div class="updated"><p>';
-        printf(__('Please check your posts for shortcodes which were available in older versions of the theme AlbinoMouse. The theme guidelines do not allow shortcodes in themes anymore. <a href="%1$s">Hide Notice</a>'), '?albinomouse_200_nag_ignore=0');
-        echo "</p></div>";
-	}
-}
-add_action('admin_init', 'albinomouse_200_nag_ignore');
-function albinomouse_200_nag_ignore() {
-	global $current_user;
-        $user_id = $current_user->ID;
-        /* If user clicks to ignore the notice, add that to their user meta */
-        if ( isset($_GET['albinomouse_200_nag_ignore']) && '0' == $_GET['albinomouse_200_nag_ignore'] ) {
-             add_user_meta($user_id, 'albinomouse_200_ignore_notice', 'true', true);
-	}
-}
 ?>
