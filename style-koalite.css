@@ -33,3 +33,13 @@ h2.site-description {
 .site-description:after {
 	border: none;
 }
+
+/* Botones del menú de navegación */
+.menu-item {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.home li:nth-of-type(1) { /* elimina el botón de inicio en la página de inicio */
+	display: none;
+}
