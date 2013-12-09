@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div id="content" class="intro" role="main">
 
-	<div class="intro-content">
+	<section class="intro-content">
 
 		<?php if (have_posts()) {
 			while (have_posts()) {
@@ -20,40 +20,53 @@ get_header(); ?>
 			}
 		} ?>
 		
-	</div>
+	</section>
 
-	<div class="three_fourth_col intro-posts">
+	<?php
+		/* Load all posts */
 
-		<h2>Histórico de Posts</h2>
+		global $post;
+		$args = array('posts_per_page' => '1000');
+		$myposts = get_posts($args);
+	?>
 
-		<ul>
+	<section class="intro-last-post">
+		<h2>Últimas entradas</h2>
 
-			<?php
-				global $post;
-				$args = array('posts_per_page' => '1000');
-				$myposts = get_posts( $args );
+		<div class="one_half_col">
+			<?php $post = $myposts[0]; setup_postdata($post); ?>
+			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/><small><?php the_date(); ?></small></h3>
+			<?php the_excerpt(); ?>
+		</div>
+		<div class="one_half_col last_col">
+			<?php $post = $myposts[1]; setup_postdata($post); ?>
+			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/><small><?php the_date(); ?></small></h3>
+			<?php the_excerpt(); ?>
+		</div>
+	</section>
 
-				foreach( $myposts as $p ): 
-					$post = $p;
-					setup_postdata($post); 
-			?>
-				<li>
-        	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <small><?php the_date(); ?></small>
-      	</li>
-			<?php endforeach; ?>
-		</ul>
-		
-	</div>
+	<section class="intro-archive">
 
-	<div class="one_forth_column intro-tags">
-
-		<h2>Temas</h2>
-
-		<div class="tag-cloud">
-			<?php if ( function_exists('wp_tag_cloud') ) : wp_tag_cloud('smallest=12&largest=20'); endif; ?>
+		<div class="three_fourth_col intro-posts">
+			<h2>Histórico</h2>
+			<ul>
+				<?php	foreach($myposts as $post): 
+						setup_postdata($post); ?>
+					<li>
+		      	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <small><?php the_date(); ?></small>
+		    	</li>
+				<?php endforeach; ?>
+			</ul>
 		</div>
 
-	</div>
+		<div class="one_fourth_col last_col intro-tags">
+			<h2>Temas</h2>
+			<div class="tag-cloud">
+				<?php if ( function_exists('wp_tag_cloud') ) : wp_tag_cloud('smallest=12&largest=20'); endif; ?>
+			</div>
+		</div>
+
+	</section>
 
 </div><!-- #content .site-archive -->
 

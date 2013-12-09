@@ -55,6 +55,20 @@ h2.site-description {
 	font-weight: 600;
 }
 
+.intro h3 {
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 0;
+}
+
+.intro section {
+	margin-bottom: 3em;
+}
+
+.intro-posts, .intro-tags {
+	margin-top: 3em;
+}
+
 .intro-posts ul {
   list-style: none;
   margin-left: 0;
