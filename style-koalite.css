@@ -43,3 +43,10 @@ h2.site-description {
 .home li:nth-of-type(1) { /* elimina el botón de inicio en la página de inicio */
 	display: none;
 }
+
+/* Formato de la página de inicio */
+.intro h2 {
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: inherit;
+}

@@ -9,9 +9,9 @@ get_header(); ?>
 
 <?php $options = get_option( 'albinomouse' ); ?>
 
-<div id="content" class="site-archive" role="main">
+<div id="content" class="intro" role="main">
 
-	<div class="intro">
+	<div class="intro-content">
 
 		<?php if (have_posts()) {
 			while (have_posts()) {
@@ -26,7 +26,7 @@ get_header(); ?>
 
 		<h2>Todos mis artículos</h2>
 
-		<ul id="archives-posts">
+		<ul id="intro-posts">
 			<?php
 				global $post;
 				$args = array( 'orderby' => 'post_date', 'order' => 'DESC', 'numberposts' => '10000' );
@@ -43,7 +43,7 @@ get_header(); ?>
 
 		<h2>Temas que he tratado</h2>
 
-		<ul id="archives-tags">
+		<ul id="intro-tags">
 			<?php 
 				$tags = get_tags();
 				foreach ($tags as $tag) {
