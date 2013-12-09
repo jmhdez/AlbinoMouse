@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: All posts
+ * Template Name: Intro Page
  * @package AlbinoMouse
  */
 
