@@ -1,6 +1,11 @@
 /* Estilo específico para blog.koalite.com */
 
 
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+	letter-spacing: inherit;
+}
+
 /* Fuera iconos de los posts */
 span.format-standard:before { 
 	content: ""; 
@@ -20,7 +25,6 @@ span.format-standard:before {
 	float: none;
 	font-size: 1.5em;
 	font-weight: 600;
-	letter-spacing: inherit;
 	color: #5c5b5a;
 	max-width: inherit;
 	padding: 0;
@@ -28,6 +32,7 @@ span.format-standard:before {
 
 h2.site-description {
 	margin: 0 0 40px 0;
+	letter-spacing: inherit;
 }
 
 .site-description:after {
@@ -48,5 +53,4 @@ h2.site-description {
 .intro h2 {
 	font-size: 24px;
 	font-weight: 600;
-	letter-spacing: inherit;
 }
