@@ -24,7 +24,7 @@ get_header(); ?>
 
 	<div class="three_fourth_col">
 
-		<h2>Todos mis artículos</h2>
+		<h2>Histórico</h2>
 
 		<ul id="intro-posts">
 			<?php
@@ -41,7 +41,7 @@ get_header(); ?>
 	</div>
 	<div class="one_forth_column">
 
-		<h2>Temas que he tratado</h2>
+		<h2>Temas</h2>
 
 		<ul id="intro-tags">
 			<?php 
