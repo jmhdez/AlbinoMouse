@@ -46,14 +46,10 @@ get_header(); ?>
 
 		<h2>Temas</h2>
 
-		<ul class="intro-tags">
-			<?php 
-				$tags = get_tags();
-				foreach ($tags as $tag) {
-					echo '<li><a href="' . get_tag_link($tag->term_id) . '" title="Posts sobre ' . $tag->name . '">' . $tag->name . '</a></li>' ;
-				}
-			?>
-		</ul>
+		<div class="tag-cloud">
+			<?php if ( function_exists('wp_tag_cloud') ) : wp_tag_cloud('smallest=12&largest=20'); endif; ?>
+		</div>
+
 	</div>
 
 </div><!-- #content .site-archive -->

@@ -59,3 +59,7 @@ h2.site-description {
   list-style: none;
   margin-left: 0;
 }
+
+.intro-tags .tag-cloud {
+	line-height: 1.4em;
+}
