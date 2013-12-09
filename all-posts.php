@@ -13,20 +13,19 @@ get_header(); ?>
 
 	<div class="intro">
 
-		<h1>Hola, soy Juan María Hernández y éste es mi blog</h1>
-		
-		<p>Me dedico a desarrollar software desde hace unos cuantos años y me encanta aprender cosas nuevas. 
-		Como creo que la mejor forma de aprender algo es tratar de enseñárselo a los demas, escribo este blog
-		donde podrás encontrar información sobre desarrollo de software en general.</p>
-
-		<p>Si quieres saber más sobre mi (enlace a quien soy), ver mis cosas online, etc.</p>
+		<?php if (have_posts()) {
+			while (have_posts()) {
+				the_post();
+				the_content();
+			}
+		} ?>
 		
 	</div>
 
 	<div class="three_fourth_col">
 
 		<h2>Todos mis artículos</h2>
-1
+
 		<ul id="archives-posts">
 			<?php
 				global $post;
