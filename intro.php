@@ -22,11 +22,13 @@ get_header(); ?>
 		
 	</div>
 
-	<div class="three_fourth_col">
+	<div class="three_fourth_col intro-posts">
 
-		<h2>Histórico</h2>
+		<h2>Histórico de Posts</h2>
 
-		<ul id="intro-posts">
+		<ul>
+
+			<!-- TODO: Optimizar esta consulta -->
 			<?php
 				global $post;
 				$args = array( 'orderby' => 'post_date', 'order' => 'DESC', 'numberposts' => '10000' );
@@ -34,16 +36,17 @@ get_header(); ?>
 
 				foreach( $myposts as $post ) : setup_postdata($post); ?>
 				<li>
-        	<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/><small><?php the_date(); ?></small></p>
+        	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <small><?php the_date(); ?></small>
       	</li>
 				<?php endforeach; ?>
 		</ul>
 	</div>
-	<div class="one_forth_column">
+
+	<div class="one_forth_column intro-tags">
 
 		<h2>Temas</h2>
 
-		<ul id="intro-tags">
+		<ul class="intro-tags">
 			<?php 
 				$tags = get_tags();
 				foreach ($tags as $tag) {
