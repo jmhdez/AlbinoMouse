@@ -39,6 +39,12 @@ h2.site-description {
 	border: none;
 }
 
+header .container {
+	background-image: url('img/logo.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
 /* Botones del menú de navegación */
 .menu-item {
 	padding-left: 8px;
