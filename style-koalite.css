@@ -45,7 +45,7 @@ h2.site-description {
 	padding-right: 8px;
 }
 
-.home li:nth-of-type(1) { /* elimina el botón de inicio en la página de inicio */
+.home #menu-header li:nth-of-type(1) { /* elimina el botón de inicio en la página de inicio */
 	display: none;
 }
 

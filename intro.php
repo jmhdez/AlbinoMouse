@@ -28,18 +28,21 @@ get_header(); ?>
 
 		<ul>
 
-			<!-- TODO: Optimizar esta consulta -->
 			<?php
 				global $post;
-				$args = array( 'orderby' => 'post_date', 'order' => 'DESC', 'numberposts' => '10000' );
+				$args = array('posts_per_page' => '1000');
 				$myposts = get_posts( $args );
 
-				foreach( $myposts as $post ) : setup_postdata($post); ?>
+				foreach( $myposts as $p ): 
+					$post = $p;
+					setup_postdata($post); 
+			?>
 				<li>
         	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <small><?php the_date(); ?></small>
       	</li>
-				<?php endforeach; ?>
+			<?php endforeach; ?>
 		</ul>
+		
 	</div>
 
 	<div class="one_forth_column intro-tags">
