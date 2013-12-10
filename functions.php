@@ -69,7 +69,7 @@ remove_filter('the_excerpt', 'wptexturize');
 
 function new_excerpt_more($more) {
 	global $post;
-    return '<p><a href="'. get_permalink($post->ID) . '" class="more-link">' . __( '<span class="icon-plus-sign"></span> Continue reading', 'albinomouse' ) . '</a></p>';
+    return '<p><a href="'. get_permalink($post->ID) . '" class="more-link">Seguir leyendo <span class="icon-chevron-right"></span></a></p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 

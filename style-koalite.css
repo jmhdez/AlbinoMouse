@@ -55,6 +55,13 @@ header .container {
 	display: none;
 }
 
+/* Enlaces de "Seguir leyendo" cuando aparece el resumen de un post */
+.more-link {
+	line-height: 1.2em;
+	padding-left: .6em;
+	padding-right: .6em;
+}
+
 /* Formato de la página de inicio */
 .intro h2 {
 	font-size: 24px;
