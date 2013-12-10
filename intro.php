@@ -23,10 +23,10 @@ get_header(); ?>
 	</section>
 
 	<?php
-		/* Load all posts */
+		/* Load last posts */
 
 		global $post;
-		$args = array('posts_per_page' => '1000');
+		$args = array('posts_per_page' => '2');
 		$myposts = get_posts($args);
 	?>
 
@@ -49,7 +49,7 @@ get_header(); ?>
 		<div class="intro-tags">
 			<h2>Temas</h2>
 			<div class="tag-cloud">
-				<?php wp_tag_cloud('smallest=14&largest=24&unit=px&number=80&separator=  '); ?>
+				<?php wp_tag_cloud('smallest=14&largest=24&unit=px&number=80'); ?>
 			</div>		
 		</div>
 	</section>
