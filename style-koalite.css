@@ -59,7 +59,8 @@ header .container {
 	padding-right: .6em;
 }
 
-/* Formato de la página de inicio */
+/* Formato de páginas estáticas (intro y all-posts) */
+/* TODO: Cambiar la clase .intro por .static o algo similar */
 .intro h2 {
 	font-size: 24px;
 	font-weight: 600;
@@ -85,11 +86,6 @@ header .container {
 	margin-bottom: 3em;
 }
 
-.intro-posts ul {
-  list-style: none;
-  margin-left: 0;
-}
-
 .intro-tags .tag-cloud {
 	line-height: 1.5em;
 	text-transform: uppercase;
@@ -98,4 +94,9 @@ header .container {
 
 .intro-tags .tag-cloud a {
 	margin-right: 1em;
+}
+
+.intro .post-list {
+  list-style: none;
+  margin-left: 0;
 }
