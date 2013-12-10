@@ -75,12 +75,14 @@ header .container {
 	font-size: 60%;
 }
 
-.intro section {
-	margin-bottom: 3em;
+.intro section:after {
+	display: table;
+	content: "";
+	clear: both;
 }
 
-.intro-posts, .intro-tags {
-	margin-top: 3em;
+.intro section {
+	margin-bottom: 3em;
 }
 
 .intro-posts ul {
@@ -89,5 +91,11 @@ header .container {
 }
 
 .intro-tags .tag-cloud {
-	line-height: 1.4em;
+	line-height: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+.intro-tags .tag-cloud a {
+	margin-right: 1em;
 }

@@ -31,7 +31,7 @@ get_header(); ?>
 	?>
 
 	<section class="intro-last-post">
-		<h2>Últimas entradas <small>&nbsp;&nbsp;&nbsp;<a href="TODO">Ver todas<i class="icon-chevron-right"></i></a></small></h2>
+		<h2>Últimos posts <small>&nbsp;<a href="TODO">Ver todos</a></small></h2>
 
 		<div class="one_half_col">
 			<?php $post = $myposts[0]; setup_postdata($post); ?>
@@ -46,26 +46,12 @@ get_header(); ?>
 	</section>
 
 	<section class="intro-archive">
-
-		<div class="three_fourth_col intro-posts">
-			<h2>Histórico</h2>
-			<ul>
-				<?php	foreach($myposts as $post): 
-						setup_postdata($post); ?>
-					<li>
-		      	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <small><?php the_date(); ?></small>
-		    	</li>
-				<?php endforeach; ?>
-			</ul>
-		</div>
-
-		<div class="one_fourth_col last_col intro-tags">
+		<div class="intro-tags">
 			<h2>Temas</h2>
 			<div class="tag-cloud">
-				<?php if ( function_exists('wp_tag_cloud') ) : wp_tag_cloud('smallest=12&largest=20'); endif; ?>
-			</div>
+				<?php wp_tag_cloud('smallest=14&largest=24&unit=px&number=80&separator=  '); ?>
+			</div>		
 		</div>
-
 	</section>
 
 </div><!-- #content .site-archive -->
