@@ -31,7 +31,7 @@ get_header(); ?>
 	?>
 
 	<section class="intro-last-post">
-		<h2>Últimas entradas</h2>
+		<h2>Últimas entradas <small>&nbsp;&nbsp;&nbsp;<a href="TODO">Ver todas<i class="icon-chevron-right"></i></a></small></h2>
 
 		<div class="one_half_col">
 			<?php $post = $myposts[0]; setup_postdata($post); ?>

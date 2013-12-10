@@ -71,6 +71,10 @@ header .container {
 	margin-top: 0;
 }
 
+.intro h2 small {
+	font-size: 60%;
+}
+
 .intro section {
 	margin-bottom: 3em;
 }
