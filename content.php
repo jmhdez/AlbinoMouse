@@ -21,7 +21,7 @@
 						<span class="post-format-icon format-standard"></span>
 					<?php endif; // End if get_post_format
 				endif; // End if 'post' == get_post_type ?>
-				<h2 class="entry-title"><?php the_title(); ?></h2>
+				<?php the_title(); ?>
 			</a>
 			<br/>
 			<small><i class="icon-calendar"></i> <?php the_time(get_option('date_format')); ?>
