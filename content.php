@@ -23,7 +23,6 @@
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</a>
 	</header><!-- End .entry-header -->
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary clear">
 			<?php if (has_excerpt()) {
 				// if it has a custom excerpt
@@ -38,23 +37,6 @@
 			}
 			?>
 	</div><!-- End .entry-summary -->
-	<?php else : ?>
-	<div class="entry-content">
-		<div class="clear">
-			<?php if (has_post_thumbnail() && isset($options['thumbnail-size'])) : ?>
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'albinomouse' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-				<?php echo get_the_post_thumbnail($post->ID, $options['thumbnail-size']); ?>
-				</a>
-			<?php else : ?>
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'albinomouse' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-				<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-				</a>	
-			<?php endif; ?>
-			<?php the_content( __( '<span class="icon-plus-sign"></span> Continue reading', 'albinomouse' ) ); ?>
-		</div><!-- .clear -->	
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'albinomouse' ), 'after' => '</div>' ) ); ?>
-	</div><!-- End .entry-content -->
-	<?php endif; ?>	
 	<footer class="entry-footer-meta clear">
 	<?php if ( 'post' == get_post_type() ) : ?>
 	
