@@ -59,21 +59,21 @@ header .container {
 	padding-right: .6em;
 }
 
-/* Formato de páginas estáticas (intro y all-posts) */
+/* Formato de páginas que no son posts (intro, all-posts, archive, etc.) */
 /* TODO: Cambiar la clase .intro por .static o algo similar */
 .intro h2 {
 	font-size: 24px;
 	font-weight: 600;
 }
 
+.intro h2 small {
+	font-size: 60%;
+}
+
 .intro h3 {
 	font-size: 16px;
 	font-weight: 600;
 	margin-top: 0;
-}
-
-.intro h2 small {
-	font-size: 60%;
 }
 
 .intro section:after {

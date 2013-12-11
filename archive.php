@@ -10,7 +10,7 @@ get_header(); ?>
 
 <?php $options = get_option( 'albinomouse' ); ?>
 
-<div id="content" class="site-archive" role="main">
+<div id="content" class="site-archive intro" role="main">
 
 	<?php if ( have_posts() ) : ?>
 

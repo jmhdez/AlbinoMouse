@@ -20,7 +20,7 @@
 					<span class="post-format-icon format-standard"></span>
 				<?php endif; // End if get_post_format
 			endif; // End if 'post' == get_post_type ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<h2 class="entry-title"><?php the_title(); ?></h2>
 		</a>
 	</header><!-- End .entry-header -->
 	<div class="entry-summary clear">
