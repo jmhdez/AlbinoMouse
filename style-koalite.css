@@ -104,3 +104,24 @@ header .container {
   list-style: none;
   margin-left: 0;
 }
+
+/* Cabecera que se colapsa */
+
+@media only screen and (min-width: 768px) {
+	.collapse-header .site-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background-color: rgba(196,198,199,0.6);
+	}
+
+	.collapse-header .title-group {
+		display: none;
+	}
+
+	.collapse-header #page {
+		padding-top: 200px;
+	}
+}

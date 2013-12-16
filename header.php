@@ -50,7 +50,7 @@
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header<?php if(!isset($options['header-background']) or $options['header-background'] == 'light-gray' ) : ?> transparent-gray<?php endif; ?>" role="banner">
 		<div class="container clear">
-			<hgroup>
+			<hgroup class="title-group">
 				<?php 
 				if(isset($options['logo-upload']) and $options['logo-upload'] != '' ) : ?>
 					<h1 class="site-title">
@@ -70,20 +70,24 @@
 				<?php endif ?>
 			</hgroup>		
 			
-			<nav class="site-navigation main-navigation<?php if(!isset($options['search-box']) or $options['search-box'] == '1') : ?> header-with-searchform<?php endif; ?>" role="navigation">
-				<h1 class="assistive-text"><?php _e( 'Menu', 'albinomouse' ); ?></h1>
-				<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'albinomouse' ); ?>"><?php _e( 'Skip to content', 'albinomouse' ); ?></a></div>
-				<?php if (has_nav_menu( 'primary' ) ) : ?>
-					<?php wp_nav_menu( array( 'container' => '', 'fallback_cb' => '', 'walker' => new albinomouse_walker_nav_menu())); ?>
-				<?php else : ?>
-					<?php wp_page_menu(); ?>
-				<?php endif; ?> 
-			</nav>
-			<?php if(!isset($options['search-box']) or $options['search-box'] == '1') : ?>
-				<aside id="header-searchform">
-					<?php get_search_form(); ?>
-				</aside>
-			<?php endif; ?>	
+			<hgroup class="nav-group">
+				<nav class="site-navigation main-navigation<?php if(!isset($options['search-box']) or $options['search-box'] == '1') : ?> header-with-searchform<?php endif; ?>" role="navigation">
+					<h1 class="assistive-text"><?php _e( 'Menu', 'albinomouse' ); ?></h1>
+					<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'albinomouse' ); ?>"><?php _e( 'Skip to content', 'albinomouse' ); ?></a></div>
+					<?php if (has_nav_menu( 'primary' ) ) : ?>
+						<?php wp_nav_menu( array( 'container' => '', 'fallback_cb' => '', 'walker' => new albinomouse_walker_nav_menu())); ?>
+					<?php else : ?>
+						<?php wp_page_menu(); ?>
+					<?php endif; ?> 
+				</nav>
+				<?php if(!isset($options['search-box']) or $options['search-box'] == '1') : ?>
+					<aside id="header-searchform">
+						<?php get_search_form(); ?>
+					</aside>
+				<?php endif; ?>	
+			</hgroup>
+
+			
 		</div> <!-- end .container .clear -->
 	</header><!-- end #masthead .site-header -->
 

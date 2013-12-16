@@ -48,5 +48,25 @@
 </div><!-- #page .hfeed .site -->
 
 <?php wp_footer(); ?>
+
+<script>
+(function($, window, document) {
+	$(function() {
+
+		var body = $('body');
+
+		$(window).on('scroll resize', function() {
+			var top = $(document).scrollTop();
+
+			if (top > 150 || )
+				body.addClass('collapse-header');
+			else
+				body.removeClass('collapse-header');
+
+		});
+	});
+})(jQuery, window, document);
+</script>
+
 </body>
 </html>
