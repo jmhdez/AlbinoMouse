@@ -1,5 +1,9 @@
 /* Estilo específico para blog.koalite.com */
 
+/* Workaround para bug https://code.google.com/p/chromium/issues/detail?id=320754 */
+body {
+	font-size: 1.6em;
+}
 
 /* Títulos */
 h1, h2, h3, h4, h5, h6 {
