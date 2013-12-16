@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<div id="content" class="site-search" role="main">
+<div id="content" class="site-search intro" role="main">
 
 	<?php if ( have_posts() ) : ?>
 
