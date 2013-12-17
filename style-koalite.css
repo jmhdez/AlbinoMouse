@@ -137,8 +137,7 @@ header .container {
 }
 
 /* Caja de búsqueda */
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 591px) {
 	#s {
 		width: 200px;
 	}
@@ -147,6 +146,13 @@ header .container {
 		float: right;
 		clear: none;
 		width: 200px;
+	}
+}
+
+@media only screen and (max-width: 590px) {
+	#masthead .container {
+		padding-top: 0px;
+		padding-bottom: 0px;
 	}
 }
 
