@@ -136,6 +136,12 @@ header .container {
 	}
 }
 
+/* Iconos sociales de Jamie Social */
+.martiniboy_social_list {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
 /* Caja de búsqueda */
 @media only screen and (min-width: 591px) {
 	#s {
@@ -148,6 +154,8 @@ header .container {
 		width: 200px;
 	}
 }
+
+/* Ajustes para distintos anchos */
 
 @media only screen and (max-width: 590px) {
 	#masthead .container {
