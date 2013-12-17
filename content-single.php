@@ -59,21 +59,8 @@
 			?>
 			<span class="release-date"><i class="icon-calendar"></i> <?php the_time(get_option('date_format')); ?></span>
 			<span class="sep author-link"> | </span>
-			<span class="author-link"><i class="icon-user"></i> <?php the_author_link(); ?> </span>
-			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<span class="sep comments-link"> | </span>
-				<span class="comments-link"><i class="icon-comment"> </i><?php comments_popup_link( __( 'Leave a comment', 'albinomouse' ), __( '1 Comment', 'albinomouse' ), __( '% Comments', 'albinomouse' ) ); ?> </span>
-			<?php endif; ?>
-			<br/>					
-			<?php /* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( __( ', ', 'albinomouse' ) );
-			if ( $categories_list && albinomouse_categorized_blog() ) : ?>
-			<span class="cat-links">
-				<i class="icon-folder-open"></i>
-				<?php printf($categories_list); ?>
-			</span>
-			<br/>
-			<?php endif; // End if categories ?>	
+			<span class="author-link"><i class="icon-user"></i> <?php the_author_link(); ?></span>
+			<span class="sep author-link"> | </span>
 			<?php /* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', __( ', ', 'albinomouse' ) );
 			if ($tags_list) : ?>
