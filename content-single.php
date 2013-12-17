@@ -57,7 +57,7 @@
 			$arc_month = get_the_time('m'); 
 			$arc_day = get_the_time('d');
 			?>
-			<span class="release-date"><i class="icon-calendar"></i> <a href="<?php echo get_day_link($arc_year, $arc_month, $arc_day); ?>"><?php the_time(get_option('date_format')); ?></a></span>
+			<span class="release-date"><i class="icon-calendar"></i> <?php the_time(get_option('date_format')); ?></span>
 			<span class="sep author-link"> | </span>
 			<span class="author-link"><i class="icon-user"></i> <?php the_author_link(); ?> </span>
 			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
