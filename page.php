@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<div id="content" class="site-page" role="main">
+<div id="content" class="site-page intro" role="main">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
