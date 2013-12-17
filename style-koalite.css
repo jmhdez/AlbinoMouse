@@ -108,13 +108,18 @@ header .container {
 /* Cabecera que se colapsa */
 
 @media only screen and (min-width: 768px) {
+
 	.collapse-header .site-header {
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		z-index: 10;
-		background-color: rgba(196,198,199,0.6);
+		background-color: #EDEEEE;
+	}
+
+	.collapse-header #masthead .container {
+		padding: 0.5em 0;		
 	}
 
 	.collapse-header .title-group {

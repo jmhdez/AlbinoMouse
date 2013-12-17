@@ -54,16 +54,20 @@
 	$(function() {
 
 		var body = $('body');
+		var doc = $(document);
 
-		$(window).on('scroll resize', function() {
-			var top = $(document).scrollTop();
-
-			if (top > 150 || )
+		var updateHeader = function() {
+			var top = doc.scrollTop();
+			if (top > 130)
 				body.addClass('collapse-header');
 			else
 				body.removeClass('collapse-header');
+		};
 
-		});
+		// Necesario por si se refresca la página mientras hay scroll hecho
+		updateHeader();
+
+		$(window).on('scroll resize', updateHeader);
 	});
 })(jQuery, window, document);
 </script>
