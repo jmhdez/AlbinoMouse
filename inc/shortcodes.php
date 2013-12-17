@@ -5,6 +5,12 @@
  * @since AlbinoMouse 1.0
  */
 
+/*-- Center --*/
+function albinomouse_center( $atts, $content = null) {
+   return '<div class="center-text">' .do_shortcode($content) . '</div>';
+}
+add_shortcode('center', 'albinomouse_center');
+
 /*-- 2 columns ---*/
  
 function albinomouse_one_half( $atts, $content = null ) {
