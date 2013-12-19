@@ -147,6 +147,12 @@ header .container {
 	margin-bottom: 2em;
 }
 
+/* Checkbox de plugin antispam */
+#cl_check_23a {
+	margin-bottom: 0.3em;
+	margin-top: 1em;
+}
+
 /* Caja de búsqueda */
 @media only screen and (min-width: 591px) {
 	#s {
