@@ -28,7 +28,7 @@
 		</div>
 	</div><!-- #footer-widgets -->
 	
-	<div id="footer-info" class="container">
+	<div id="footer-info" class="container center-text">
 		<?php do_action( 'albinomouse_credits' ); ?>
 		<?php if(!isset($options['copyright-text']) or $options['copyright-text'] == '' ) { ?>
 				&#169; Copyright <?php echo date("Y"); ?> <?php echo(bloginfo( 'name' ));
