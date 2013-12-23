@@ -43,6 +43,7 @@ h2.site-description {
 	padding: 0;
 	margin: 0 0 1.5em 0;
 	letter-spacing: inherit;
+	text-shadow: rgba(255, 255, 255, 0.8) 1px 1px;
 }
 
 h2.site-description:after {
