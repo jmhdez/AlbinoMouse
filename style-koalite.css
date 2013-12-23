@@ -168,6 +168,14 @@ header .container {
 
 /* Ajustes para distintos anchos */
 
+.container {
+	max-width: 800px;
+}
+
+.sidebar-off #content {
+	width: 100%;
+}
+
 @media only screen and (max-width: 590px) {
 	#masthead .container {
 		padding-top: 0px;
