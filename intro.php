@@ -31,7 +31,7 @@ get_header(); ?>
 	?>
 
 	<section class="intro-last-post">
-		<h2>Últimos posts <small>&nbsp;<a href="TODO">Ver todos</a></small></h2>
+		<h2>Últimos posts <small>&nbsp;<a href="http://blog.koalite.com/archive/">Ver todos</a></small></h2>
 
 		<div class="one_half_col">
 			<?php $post = $myposts[0]; setup_postdata($post); ?>
