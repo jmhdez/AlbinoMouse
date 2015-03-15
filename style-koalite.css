@@ -66,16 +66,6 @@ header .container {
 	display: none;
 }
 
-/* Botón de Tyba */
-#menu-header > li:last-child {
-	background: #fff;
-	box-sizing: border-box;
-	box-shadow: inset 0 0 0 2px #ad001c;
-}
-#menu-header > li:last-child a {
-	color: #ad001c !important
-}
-
 /* Enlaces de "Seguir leyendo" cuando aparece el resumen de un post */
 .more-link {
 	line-height: 1.2em;
