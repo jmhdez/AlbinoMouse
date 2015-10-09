@@ -898,7 +898,8 @@ h1.archive-header {
 .post-info {
 	font-size: 0.9em;
 	line-height: 1.6;
-	margin-bottom: 2em;	
+	margin-bottom: 2em;
+	margin-top: 1em;
 }
 .sep {
 	margin: 0 5px;

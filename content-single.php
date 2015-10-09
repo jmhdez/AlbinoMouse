@@ -17,6 +17,27 @@
 			<?php endif; // End if get_post_format
 		endif; // End if 'post' == get_post_type ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+
+		<p class="post-info">
+			<?php
+			$arc_year = get_the_time('Y'); 
+			$arc_month = get_the_time('m'); 
+			$arc_day = get_the_time('d');
+			?>
+			<span class="release-date"><i class="icon-calendar"></i> <?php the_time(get_option('date_format')); ?></span>
+			<span class="sep author-link"> | </span>
+			<span class="author-link"><i class="icon-user"></i> <?php the_author_link(); ?></span>
+			<span class="sep author-link"> | </span>
+			<?php /* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', __( ', ', 'albinomouse' ) );
+			if ($tags_list) : ?>
+			<span class="tag-links">
+				<i class="icon-tag"></i>
+				<?php printf($tags_list); ?>
+			</span>
+			<?php endif; // End if $tags_list ?>
+		</p><!-- End .post-info -->
+		
 	</header><!-- End .entry-header -->	
 	
 	<div class="entry-content">
@@ -50,26 +71,6 @@
 			</div><!-- End .author-description -->
 		</div><!-- End .entry-author-info -->
 		<?php endif; ?>
-
-		<p class="post-info">
-			<?php
-			$arc_year = get_the_time('Y'); 
-			$arc_month = get_the_time('m'); 
-			$arc_day = get_the_time('d');
-			?>
-			<span class="release-date"><i class="icon-calendar"></i> <?php the_time(get_option('date_format')); ?></span>
-			<span class="sep author-link"> | </span>
-			<span class="author-link"><i class="icon-user"></i> <?php the_author_link(); ?></span>
-			<span class="sep author-link"> | </span>
-			<?php /* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', __( ', ', 'albinomouse' ) );
-			if ($tags_list) : ?>
-			<span class="tag-links">
-				<i class="icon-tag"></i>
-				<?php printf($tags_list); ?>
-			</span>
-			<?php endif; // End if $tags_list ?>
-		</p><!-- End .post-info -->
 
 		<div class="social-buttons clear">
 		<?php if(isset($options['social-media-location']['single']) and $options['social-media-location']['single'] == '1' ) :
