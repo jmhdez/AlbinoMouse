@@ -111,6 +111,7 @@ function optionsframework_options() {
 			'Droid Sans' => 'Droid Sans',
 			'Droid Serif' => 'Droid Serif',
 			'Open Sans' => 'Open Sans',
+            'Oxygen' => 'Oxygen',
 			'Source Sans Pro' => 'Source Sans Pro',
 			'Ubuntu' => 'Ubuntu'));
 

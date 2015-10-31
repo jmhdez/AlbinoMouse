@@ -213,6 +213,9 @@ function albinomouse_google_web_fonts() {
 	if ($options['title_font'] == 'Anton') {
 		wp_enqueue_style( 'Anton', 'http://fonts.googleapis.com/css?family=Anton' );
 	}
+	if ($options['general_font'] == 'Oxygen') {
+		wp_enqueue_style( 'Oxygen', 'http://fonts.googleapis.com/css?family=Oxygen:400,700,400italic,700italic' );
+	}
 	if ($options['title_font'] == 'Bitter') {
 		wp_enqueue_style( 'Bitter', 'http://fonts.googleapis.com/css?family=Bitter' );
 	}
@@ -335,6 +338,9 @@ function albinomouse_add_custom_styles() {
 	}
 	if ($options['general_font'] == 'Ubuntu') { ?>
 	body, button, input, select, textarea {	font-family: 'Ubuntu', sans-serif; } <?php
+	}
+	if ($options['general_font'] == 'Oxygen') { ?>
+	body, button, input, select, textarea {	font-family: 'Oxygen', sans-serif; } <?php
 	}
 	if ($options['title_font'] == 'Yanone Kaffeesatz') { ?>
 	h1, h2, h3, h4, h5, h6 { font-family: 'Yanone Kaffeesatz', sans-serif; line-height: 1.1; }
