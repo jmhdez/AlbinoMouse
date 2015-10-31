@@ -163,7 +163,7 @@ h2 {
 h3 {
 	font-size: 2.25em;
 	line-height: 1.4;
-	margin: 0.8em 0 0.4em -1px;
+	margin: 1em 0 0.5em -1px;
 }
 h4 {
 	background-color: rgba(196,198,199,0.3);
@@ -888,7 +888,7 @@ h1.archive-header {
 }
 
 .entry-content {
-	margin-top: 10px;
+	margin-top: 50px;
 }
 
 /*--- Post Footer ---*/
