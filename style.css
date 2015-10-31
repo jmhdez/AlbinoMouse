@@ -266,7 +266,8 @@ pre {
 }
 code, kbd, tt, var {
 	font-family: Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
+	font-size: 16px;
+	background: #f6f6f6;
 }
 abbr, acronym {
 	border-bottom: 1px dotted #666;
