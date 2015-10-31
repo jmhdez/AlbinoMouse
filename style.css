@@ -265,7 +265,7 @@ pre {
 	max-width: 100%;
 }
 code, kbd, tt, var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
 }
 abbr, acronym {
