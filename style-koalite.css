@@ -22,6 +22,11 @@ blockquote p {
 	z-index: 0;
 }
 
+/* enlaces en el cuerpo de los posts. Al usar Oxygen no se ven si no son en negrita */
+.entry-content a {
+	font-weight: bold;
+}
+
 /* Fuera iconos de los posts */
 span.format-standard:before { 
 	content: none; 
