@@ -98,6 +98,16 @@ header .container {
 
 /* Formato de páginas que no son posts (intro, all-posts, archive, etc.) */
 /* TODO: Cambiar la clase .intro por .static o algo similar */
+
+.intro h1.search-page, .intro h1.archive-header {
+	/* espacio entre frase buscada/categoría/etiqueta y resultados */
+	margin-bottom: 2em;
+}
+
+.intro .entry-header {
+	margin-bottom: 1.2em;
+}
+
 .intro h2 {
 	font-size: 24px;
 	font-weight: 600;
@@ -193,11 +203,15 @@ header .container {
 /* Ajustes para distintos anchos */
 
 .container {
-	max-width: 800px;
+	max-width: 700px;
 }
 
 .sidebar-off #content {
 	width: 100%;
+}
+
+article.post {
+	font-size: 18px;
 }
 
 @media only screen and (max-width: 590px) {
