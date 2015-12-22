@@ -1,4 +1,4 @@
-/* Estilo específico para blog.koalite.com */
+﻿/* Estilo específico para blog.koalite.com */
 
 /* Workaround para bug https://code.google.com/p/chromium/issues/detail?id=320754 */
 body {
@@ -211,7 +211,7 @@ header .container {
 }
 
 article.post {
-	font-size: 18px;
+	font-size: 17px;
 }
 
 @media only screen and (max-width: 590px) {
