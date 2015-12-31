@@ -42,6 +42,21 @@ span.format-standard {
 	margin: 0
 }
 
+/* estilo para bloques de imágenes con leyenda */
+.entry-content .image a {
+	border-bottom: 0;
+}
+
+.entry-content .image small {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.entry-content .image small a {
+	border-bottom: 1px dotted;
+}
+
 /* Estilo para centrar texto */
 .center-text {
 	text-align: center;
