@@ -28,6 +28,17 @@ blockquote p {
 	z-index: 0;
 }
 
+/* código */
+code {
+	font-size: 17px;
+}
+
+.syntaxhighlighter {
+	margin-bottom: 1.7em !important;
+}
+
+
+
 /* enlaces en el cuerpo de los posts. Al usar Oxygen no se ven si no se destacan un poco  */
 .entry-content a {
 	border-bottom: 1px dotted;
