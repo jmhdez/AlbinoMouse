@@ -211,31 +211,31 @@ function albinomouse_google_web_fonts() {
 	$options = get_option( 'albinomouse' );
 
 	if ($options['title_font'] == 'Anton') {
-		wp_enqueue_style( 'Anton', 'http://fonts.googleapis.com/css?family=Anton' );
+		wp_enqueue_style( 'Anton', 'https://fonts.googleapis.com/css?family=Anton' );
 	}
 	if ($options['general_font'] == 'Oxygen') {
-		wp_enqueue_style( 'Oxygen', 'http://fonts.googleapis.com/css?family=Oxygen:400,700,400italic,700italic' );
+		wp_enqueue_style( 'Oxygen', 'https://fonts.googleapis.com/css?family=Oxygen:400,700,400italic,700italic' );
 	}
 	if ($options['title_font'] == 'Bitter') {
-		wp_enqueue_style( 'Bitter', 'http://fonts.googleapis.com/css?family=Bitter' );
+		wp_enqueue_style( 'Bitter', 'https://fonts.googleapis.com/css?family=Bitter' );
 	}
 	if ($options['title_font'] == 'Droid Sans' || $options['general_font'] == 'Droid Sans') {
-		wp_enqueue_style( 'DroidSans', 'http://fonts.googleapis.com/css?family=Droid+Sans:400,700' );
+		wp_enqueue_style( 'DroidSans', 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700' );
 	}
 	if ($options['title_font'] == 'Droid Serif' || $options['general_font'] == 'Droid Serif') {
-		wp_enqueue_style( 'DroidSerif', 'http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' );
+		wp_enqueue_style( 'DroidSerif', 'https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' );
 	}
 	if ($options['title_font'] == 'Open Sans' || $options['general_font'] == 'Open Sans') {
-		wp_enqueue_style( 'OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' );
+		wp_enqueue_style( 'OpenSans', 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' );
 	}
 	if ($options['title_font'] == 'Source Sans Pro' || $options['general_font'] == 'Source Sans Pro') {
-		wp_enqueue_style( 'SourceSansPro', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' );
+		wp_enqueue_style( 'SourceSansPro', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' );
 	}	
 	if ($options['title_font'] == 'Ubuntu' || $options['general_font'] == 'Ubuntu') {
-		wp_enqueue_style( 'Ubuntu', 'http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic' );
+		wp_enqueue_style( 'Ubuntu', 'https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic' );
 	}
 	if ($options['title_font'] == 'Yanone Kaffeesatz') {
-		wp_enqueue_style( 'YanoneKaffeesatz', 'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' );
+		wp_enqueue_style( 'YanoneKaffeesatz', 'https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' );
 	}			
 }
 add_action( 'wp_enqueue_scripts', 'albinomouse_google_web_fonts' );
